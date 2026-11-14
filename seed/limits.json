@@ -1,0 +1,217 @@
+{
+  "_note": "Limits & honesty page content (FR-SET-3, doc 11 §5.9, doc 14 §4). Statically imported by src/features/handbook/content/limits.ts and validated at load. kind: real = public data or published evidence; measured = measured by the user in this app; simulated = synthetic; modeled = a model or an assumption built on published values; demo = our own formula or parameter; experimental = not validated or not built. availability: absent = in this build; 'unavailable' = designed but not working in this build; 'not-built' = described but not implemented. The rPPG validation table is not here (docs/VALIDATION.md does not exist yet): rppgValidation gives the honest default.",
+  "kindLabels": {
+    "real": "Real data",
+    "measured": "Measured by you",
+    "simulated": "Simulated",
+    "modeled": "Modeled",
+    "demo": "Demo parameter",
+    "experimental": "Experimental"
+  },
+  "dataKinds": [
+    {
+      "id": "noaa-goes-protons",
+      "kind": "real",
+      "label": "NOAA GOES proton flux",
+      "detail": "Live 5-minute proton flux from NOAA SWPC, converted to the NOAA S-scale. Offline, ARGUS shows the last cached copy or a bundled snapshot with its age.",
+      "sourceIds": ["SRC_NOAA_SWPC_PROTONS"]
+    },
+    {
+      "id": "nasa-donki-events",
+      "kind": "real",
+      "label": "NASA DONKI solar particle events",
+      "detail": "Event list from NASA's DONKI space-weather catalog. Currently unavailable in this build.",
+      "sourceIds": ["SRC_DONKI"],
+      "availability": "unavailable"
+    },
+    {
+      "id": "osdr-preflight-blood",
+      "kind": "real",
+      "label": "NASA OSDR pre-flight blood values",
+      "detail": "Real, anonymised pre-flight blood counts (OSD-569) and metabolic panel values (OSD-575) of commercial astronauts, used as pre-flight anchors for the fictional crew and for lab reference ranges. They are not the fictional crew's own values.",
+      "sourceIds": ["SRC_OSD569", "SRC_OSD575"]
+    },
+    {
+      "id": "published-limits",
+      "kind": "real",
+      "label": "Published limits and evidence",
+      "detail": "NASA-STD-3001 limits, NASA human-research risk pages and the peer-reviewed findings behind the space rules. Every number links to its entry in the source registry, with its status (verified or partial).",
+      "sourceIds": ["SRC_STD3001_CO2", "SRC_STD3001_RAD", "SRC_STD3001_ECLSS", "SRC_NASA_RISKS"]
+    },
+    {
+      "id": "camera-pulse",
+      "kind": "measured",
+      "label": "Camera pulse",
+      "detail": "Measured with your camera in the Lab (POS method), with a quality score. Video stays on this device. Only the number is saved.",
+      "sourceIds": ["SRC_POS_WANG2017", "SRC_DEMO_QUALITY_SCORES"]
+    },
+    {
+      "id": "reaction-test",
+      "kind": "measured",
+      "label": "Reaction Self-Test",
+      "detail": "Measured by you on this device, modeled on NASA's 3-minute PVT-B.",
+      "sourceIds": ["SRC_COGNITION", "SRC_PVT_B_BASNER2011"]
+    },
+    {
+      "id": "manual-entries",
+      "kind": "measured",
+      "label": "Manual entries and imports",
+      "detail": "Values you type in or import from a file are labeled MEASURED. They are compared with the selected crew member's simulated baseline.",
+      "sourceIds": ["SRC_DEMO_SIMULATION"]
+    },
+    {
+      "id": "crew-readings",
+      "kind": "simulated",
+      "label": "Crew members and their daily readings",
+      "detail": "The four crew members are fictional. Their baselines, daily readings, noise and scenarios are synthetic, and every screen that shows them carries the SIMULATED DATA badge.",
+      "sourceIds": ["SRC_DEMO_SIMULATION"]
+    },
+    {
+      "id": "cabin-sensors",
+      "kind": "simulated",
+      "label": "Cabin sensors",
+      "detail": "Cabin CO₂, temperature and humidity are a simulated sensor stream; the limits they are judged against are real.",
+      "sourceIds": ["SRC_DEMO_SIMULATION", "SRC_STD3001_CO2", "SRC_STD3001_ECLSS"]
+    },
+    {
+      "id": "career-doses",
+      "kind": "simulated",
+      "label": "Pre-mission career doses",
+      "detail": "Each crew member's radiation dose before this mission is a simulated value.",
+      "sourceIds": ["SRC_DEMO_SIMULATION"]
+    },
+    {
+      "id": "spe-replay",
+      "kind": "simulated",
+      "label": "Solar particle event replay",
+      "detail": "REPLAY — a synthetic S2-class profile (demo), not a recorded event. It is never shown as real or live.",
+      "sourceIds": ["SRC_DEMO_RADIATION_MODEL"]
+    },
+    {
+      "id": "gcr-dose-rates",
+      "kind": "modeled",
+      "label": "Cosmic-ray dose rates",
+      "detail": "Published dose-equivalent measurements (ISS, Mars cruise, lunar surface, Mars surface) applied to the mission profiles as assumptions. They are dose equivalent, while the career limit is an effective dose.",
+      "sourceIds": ["SRC_ISS_DOSE", "SRC_RAD_CURIOSITY", "SRC_RAD_CHANGE4", "SRC_RAD_MARS_SURFACE"]
+    },
+    {
+      "id": "spe-dose",
+      "kind": "modeled",
+      "label": "Modeled solar-event dose",
+      "detail": "Modeled — illustrative. Real crew dose comes from personal dosimeters.",
+      "sourceIds": ["SRC_DEMO_RADIATION_MODEL"]
+    },
+    {
+      "id": "comms-delay",
+      "kind": "modeled",
+      "label": "Mars-transit comms delay",
+      "detail": "Modeled delay (demo): a demo profile of how the one-way delay grows during the transit, not derived from a trajectory.",
+      "sourceIds": ["SRC_DEMO_SIMULATION"]
+    },
+    {
+      "id": "shelter-advisory",
+      "kind": "demo",
+      "label": "Shelter advisory",
+      "detail": "A demo policy that maps the S-scale to an advisory. Real shelter calls come from the mission's radiation specialists.",
+      "sourceIds": ["SRC_DEMO_RADIATION_MODEL"]
+    },
+    {
+      "id": "readiness",
+      "kind": "demo",
+      "label": "Readiness index, points and streaks",
+      "detail": "A demo formula computed from open flags and routine adherence, not an Integrated Medical Model output.",
+      "sourceIds": ["SRC_DEMO_READINESS"]
+    },
+    {
+      "id": "rule-bands",
+      "kind": "demo",
+      "label": "Rule band edges marked demo",
+      "detail": "Band edges marked Demo parameter are our own choices for this prototype; they are not clinical or NASA limits.",
+      "sourceIds": ["SRC_DEMO_RULE_BANDS"]
+    },
+    {
+      "id": "baseline-constants",
+      "kind": "demo",
+      "label": "Personal baseline tuning constants",
+      "detail": "The thresholds, spread floors and the expected in-flight sleep shift of the personal baseline engine are tuning choices for this prototype.",
+      "sourceIds": ["SRC_DEMO_BASELINE_ENGINE"]
+    },
+    {
+      "id": "quality-scores",
+      "kind": "demo",
+      "label": "Measurement quality and staleness",
+      "detail": "Camera quality thresholds, re-measure timing and the assumed camera field of view are our own choices.",
+      "sourceIds": ["SRC_DEMO_QUALITY_SCORES"]
+    },
+    {
+      "id": "face-fluid-index",
+      "kind": "experimental",
+      "label": "Face fluid-shift index",
+      "detail": "Built: experimental, not validated; the reference is the first scan on this device; trend only — it never raises Watch or Act.",
+      "sourceIds": ["SRC_NASA_RISKS"]
+    },
+    {
+      "id": "respiration",
+      "kind": "experimental",
+      "label": "Respiration rate from the camera",
+      "detail": "Experimental and not built in this version.",
+      "sourceIds": ["SRC_DEMO_QUALITY_SCORES"],
+      "availability": "not-built"
+    }
+  ],
+  "notMedicalDevice": "ARGUS is a hackathon prototype for decision support. It is not a diagnostic or certified medical device and gives no drug doses. Its actions are limited to re-measuring, telling the Crew Medical Officer, sending a report to the flight surgeon and following a listed protocol.",
+  "nonGoals": [
+    "Not a diagnostic or certified medical device; no drug dosing.",
+    "No claim that rPPG or the face index replace clinical instruments.",
+    "Simulated crew data is synthetic; real NASA datasets are used for pre-flight anchors and environment.",
+    "No real identity/security system (demo PINs); design notes describe what flight software would need."
+  ],
+  "knownGaps": [
+    {
+      "id": "identity",
+      "label": "Identity and access",
+      "detail": "The demo uses a role picker and a shared PIN. Flight software would use the agency identity system.",
+      "sourceIds": []
+    },
+    {
+      "id": "encryption",
+      "label": "Encryption at rest",
+      "detail": "Records in the browser database are not encrypted. Encrypting them (WebCrypto AES-GCM) is future work.",
+      "sourceIds": []
+    },
+    {
+      "id": "rppg-validation",
+      "label": "Camera pulse validation",
+      "detail": "No paired validation against a reference device has been done yet.",
+      "sourceIds": ["SRC_POS_WANG2017"]
+    },
+    {
+      "id": "thresholds",
+      "label": "Clinical review of demo thresholds",
+      "detail": "Band edges and baseline constants marked Demo parameter are our own choices and have not been reviewed by clinicians or flight surgeons.",
+      "sourceIds": ["SRC_DEMO_RULE_BANDS", "SRC_DEMO_BASELINE_ENGINE"]
+    },
+    {
+      "id": "radiation-dose",
+      "label": "Real radiation dose",
+      "detail": "Turning space-weather flux into dose inside a vehicle needs transport codes and vehicle geometry. ARGUS does not do that; flight use would read dose from personal dosimeters and shelter calls from radiation specialists.",
+      "sourceIds": ["SRC_DEMO_RADIATION_MODEL"]
+    },
+    {
+      "id": "device-adapters",
+      "label": "Live device adapters",
+      "detail": "Device import from files is planned and not in this build. Formats like CSA's Bio-Monitor smart shirt or the ARCHeR actigraph would plug in via an adapter; no live adapter is built.",
+      "sourceIds": ["SRC_BIOMONITOR", "SRC_ARCHER_NASA"]
+    },
+    {
+      "id": "data-platform",
+      "label": "Connection to NASA's crew health data platform",
+      "detail": "ARGUS uses a FHIR-style data model so it could feed a platform like CHP-IDSP; no such connection exists.",
+      "sourceIds": ["SRC_CHP_IDSP_ASMA"]
+    }
+  ],
+  "rppgValidation": {
+    "done": false,
+    "placeholder": "No paired validation against a reference device has been done yet."
+  }
+}

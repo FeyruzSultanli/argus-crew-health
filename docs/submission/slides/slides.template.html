@@ -1,0 +1,286 @@
+<!doctype html>
+<!--
+  ARGUS — 7-slide deck (editable source).
+  Text = docs/submission/SLIDES.md (variant B for the camera-pulse validation line).
+  Do not open this file directly for presenting: run `npm run slides:build`, which fills {{…}} from deck.config.json,
+  embeds the IBM Plex fonts and writes slides.html, ARGUS-slides.pdf and slide-1.png … slide-7.png.
+  Visuals are crops of docs/submission/screenshots/*.png (data-crop = x,y,w,h in the 1920×1080 screenshot).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARGUS — Crew Health Autonomy (slides)</title>
+<style>
+/*{{FONTS}}*/
+:root {
+  /* dark tokens of src/ui/tokens.css */
+  --bg: #07090d; --surface-1: #0d1117; --surface-2: #131a22; --border: #1e2630; --border-strong: #2b3542;
+  --text: #e6edf3; --text-2: #9aa7b4; --text-3: #7d8996; --brand: #2dd4bf;
+  --ok: #3dd68c; --info: #5ab8ff; --watch: #f5b83d; --act: #ff5a5f;
+}
+@page { size: 1920px 1080px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg); }
+body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--bg);
+  padding: 92px 104px 96px; display: grid; break-after: page; page-break-after: always;
+}
+.slide:last-child { break-after: auto; page-break-after: auto; }
+.mark { position: absolute; top: 40px; left: 104px; display: flex; align-items: center; gap: 14px;
+  font-weight: 600; font-size: 24px; letter-spacing: 0.08em; color: var(--text); }
+.mark img { width: 40px; height: 40px; }
+.pageno { position: absolute; bottom: 40px; right: 104px; font-family: 'IBM Plex Mono', monospace; font-size: 20px; color: var(--text-3); }
+.foot { position: absolute; bottom: 40px; left: 104px; font-size: 20px; color: var(--text-3); }
+h1 { font-size: 66px; line-height: 1.08; font-weight: 600; letter-spacing: -0.012em; }
+h1.big { font-size: 96px; letter-spacing: -0.02em; }
+ul.lines { list-style: none; display: grid; gap: 26px; margin-top: 44px; }
+ul.lines li { position: relative; padding-left: 34px; font-size: 31px; line-height: 1.34; color: var(--text-2); max-width: 46ch; }
+ul.lines li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 14px; height: 3px; background: var(--brand); border-radius: 2px; }
+ul.lines li b { color: var(--text); font-weight: 600; }
+ul.lines.dense { gap: 20px; margin-top: 36px; }
+ul.lines.dense li { font-size: 28px; line-height: 1.32; }
+.cols { display: grid; grid-template-columns: 1fr auto; gap: 72px; align-items: start; margin-top: 8px; }
+.shot { position: relative; border: 1px solid var(--border-strong); border-radius: 14px; overflow: hidden;
+  background-repeat: no-repeat; background-color: var(--surface-1); }
+figure { display: grid; gap: 12px; }
+figcaption { font-size: 20px; line-height: 1.35; color: var(--text-3); max-width: 60ch; }
+figcaption b { color: var(--text-2); font-weight: 500; }
+.sim { font-family: 'IBM Plex Mono', monospace; font-size: 17px; letter-spacing: 0.06em; color: var(--text-2);
+  border: 1px dashed var(--border-strong); border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+.chip { display: inline-block; font-size: 0.9em; font-weight: 600; padding: 0 0.42em; border-radius: 0.3em; border: 2px solid; line-height: 1.25; }
+.chip.act { color: var(--act); border-color: color-mix(in srgb, var(--act) 55%, transparent); background: color-mix(in srgb, var(--act) 12%, transparent); }
+.chip.ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 45%, transparent); background: color-mix(in srgb, var(--ok) 10%, transparent); }
+.todo { outline: 3px dashed var(--watch); outline-offset: 4px; border-radius: 4px; }
+.mono { font-family: 'IBM Plex Mono', monospace; }
+.nowrap { white-space: nowrap; }
+
+/* slide 1 */
+.s1 { grid-template-columns: 1fr 760px; gap: 56px; align-items: center; }
+.s1 .sub { font-size: 40px; line-height: 1.25; color: var(--text); margin-top: 36px; max-width: 26ch; font-weight: 400; }
+.s1 .meta { margin-top: 56px; display: grid; gap: 16px; font-size: 27px; color: var(--text-2); line-height: 1.35; }
+.s1 .meta .team { font-size: 32px; color: var(--text); font-weight: 500; }
+/* slide 2 */
+.s2 .cols { grid-template-columns: 1fr 520px; }
+.s2 ul.lines { gap: 34px; }
+.s2 ul.lines li { font-size: 36px; max-width: 40ch; }
+.icons { display: grid; gap: 30px; margin-top: 52px; }
+.icon-row { display: flex; align-items: center; gap: 28px; padding: 26px 30px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface-1); }
+.icon-row svg { width: 64px; height: 64px; flex: none; stroke: var(--brand); }
+.icon-row span { font-size: 36px; font-weight: 500; }
+/* slide 3 */
+.s3 .cols { grid-template-columns: 1fr 860px; gap: 64px; }
+.s3 .left { display: grid; gap: 34px; align-content: start; }
+.inset { display: grid; grid-template-columns: 400px 1fr; gap: 24px; align-items: end; }
+/* slides 4–6 */
+.s4 .cols, .s5 .cols, .s6 .cols { grid-template-columns: 1fr 820px; gap: 60px; }
+.stack { display: grid; gap: 22px; }
+figure.row { grid-template-columns: auto 1fr; align-items: end; gap: 24px; }
+.s4 .stack { gap: 40px; }
+.s4 ul.lines.dense { gap: 16px; }
+.s4 ul.lines.dense li { font-size: 27px; }
+/* slide 7 */
+.s7 .cols { grid-template-columns: 1fr 640px; gap: 64px; }
+.qr { display: grid; gap: 16px; justify-items: start; }
+.qr img { width: 260px; height: 260px; border-radius: 12px; }
+.qr .url { font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: var(--text); line-height: 1.45; white-space: nowrap; }
+.qr .url small { display: block; font-family: 'IBM Plex Sans', sans-serif; font-size: 20px; color: var(--text-3); margin-top: 4px; white-space: normal; }
+</style>
+</head>
+<body>
+
+<!-- 1 — Title -->
+<section class="slide s1" data-slide="1">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1 class="big">ARGUS — Crew Health Autonomy</h1>
+    <p class="sub">Personal · Space · Earth: health decisions on board, when Earth is minutes away</p>
+    <div class="meta">
+      <span class="team">{{teamName}} · {{members}}</span>
+      <span>NASA Space Apps Challenge 2026 · Create Health Monitoring Software for Astronauts on Space Missions</span>
+      <span>Live demo: <span class="mono nowrap">{{liveUrlShort}}</span><br>Prototype, not a medical device</span>
+    </div>
+  </div>
+  <figure>
+    <div class="shot" data-src="../screenshots/06-body-c3-lens-combined.png" data-crop="650,265,640,712" data-width="760"></div>
+    <figcaption>K. Osei, simulated crew member: 3D body, lens Combined, heart Act. <span class="sim">SIMULATED DATA</span></figcaption>
+  </figure>
+  <div class="pageno">1 / 7</div>
+</section>
+
+<!-- 2 — The problem -->
+<section class="slide s2" data-slide="2">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1>Far from Earth, “normal” is not enough</h1>
+    <div class="cols">
+      <ul class="lines">
+        <li>The doctor is minutes away: up to about 22 minutes one way between Earth and Mars</li>
+        <li>Space changes normal: in-flight hematocrit 10–12 % higher, resting core temperature about 1.0 °C higher, sleep about 6.1 h of 8.5 h scheduled</li>
+        <li>Population ranges miss the individual: a change can be large for one person and still “in range”</li>
+        <li>Monitoring is periodic: discrete devices, vital signs mainly during exercise and spacewalks</li>
+      </ul>
+      <div class="icons">
+        <div class="icon-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>Delay</span></div>
+        <div class="icon-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg><span>Adapting body</span></div>
+        <div class="icon-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 14v2.2l1.6 1"/><path d="M16 2v3"/><path d="M21 7.338V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h2.338"/><path d="M3 9h5.859"/><path d="M8 2v3"/><circle cx="16" cy="16" r="6"/></svg><span>Periodic checks</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">2 / 7</div>
+</section>
+
+<!-- 3 — Our idea -->
+<section class="slide s3" data-slide="3">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1>Every reading judged three ways</h1>
+    <div class="cols">
+      <div class="left">
+      <ul class="lines dense">
+        <li><b>Personal:</b> unusual for this astronaut? (robust baseline, z-score, CuSum)</li>
+        <li><b>Space:</b> expected or concerning in this mission? (NASA standards and evidence)</li>
+        <li><b>Earth:</b> would a clinic flag it? (clinical reference ranges) · plus <b>Quality:</b> can we trust the reading?</li>
+        <li class="example">Example, Mars transit day 143: K. Osei’s resting pulse 69 bpm, her usual 58 → Personal <span class="chip act">Act</span>, Space <span class="chip ok">Nominal</span>, Earth <span class="chip ok">Nominal</span>: <b>caught only by personal baseline</b></li>
+      </ul>
+        <div class="inset">
+          <div class="shot" data-src="../screenshots/03-body-c3-lens-earth.png" data-crop="740,470,480,400" data-width="400"></div>
+          <figcaption><b>Same day, lens Earth:</b> the heart is Nominal.</figcaption>
+        </div>
+      </div>
+      <figure>
+        <div class="shot" data-src="../screenshots/05-body-c3-lens-personal.png" data-crop="700,0,1212,1000" data-width="860"></div>
+        <figcaption><b>Lens Personal:</b> heart Act; P Act · S Nominal · E Nominal, “Caught only by personal baseline”. Running app, simulated crew.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="pageno">3 / 7</div>
+</section>
+
+<!-- 4 — Measure with what's on board -->
+<section class="slide s4" data-slide="4">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1>Measure with what’s on board</h1>
+    <div class="cols">
+      <ul class="lines dense">
+        <li><b>Camera pulse:</b> 30 s with the laptop webcam, POS method, on-device face tracking, quality score from five checks; video never leaves the device</li>
+        <li><b>Reaction Self-Test:</b> 3 minutes, modeled on NASA’s PVT-B; lapses compared with the astronaut’s own pre-flight runs</li>
+        <li><b>Vision check (screening only):</b> Amsler grid per eye and near acuity on the card-calibrated laptop screen, modeled on the ISS laptop tests; a new marked area since the last test → Watch, near the centre → Act</li>
+        <li><b>Guided entry:</b> blood pressure, SpO₂, temperature, glucose, mass, sleep, mood, symptoms, each with “how to measure”</li>
+        <li><b>Face fluid-shift scan (experimental, not validated):</b> 3 s of face geometry vs your own first scan; trend only</li>
+        <li>Camera pulse not yet compared with a reference device: shown with a quality score, used for screening and trends.</li>
+      </ul>
+      <div class="stack">
+        <figure class="row">
+          <div class="shot" data-src="../screenshots/34-amsler-result-watch-new-area.png" data-crop="472,70,976,810" data-width="520"></div>
+          <figcaption><b>Vision check, Amsler result</b> in scripted test mode (TEST MODE badge): two marked squares, “new area since last test”, Watch. Screening only. Simulated crew.</figcaption>
+        </figure>
+        <figure class="row">
+          <div class="shot" data-src="../screenshots/12-reaction-test-result-test-mode.png" data-crop="472,64,976,432" data-width="520"></div>
+          <figcaption><b>Reaction Self-Test result</b> from the scripted test mode (TEST MODE badge), not saved. Simulated crew.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">4 / 7</div>
+</section>
+
+<!-- 5 — Radiation and environment -->
+<section class="slide s5" data-slide="5">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1>Space weather, dose and cabin air</h1>
+    <div class="cols">
+      <ul class="lines dense">
+        <li>NOAA GOES proton flux: live, else cached, else bundled snapshot, always with its age → NOAA S-scale</li>
+        <li>Crew dose ledger vs NASA-STD-3001: career &lt; 600 mSv, solar-event design limit &lt; 250 mSv; Mars cruise 1.8 mSv/day measured by Curiosity RAD</li>
+        <li>Storm <b>replay (synthetic)</b> S2-class profile → shelter advisory (demo policy), modeled event dose labeled illustrative</li>
+        <li>Cabin CO₂ vs the 3 mmHg 1-hour limit and the 2.5 mmHg 7-day headache line</li>
+        <li>NASA DONKI event list: not connected in this build (service unreachable on build day)</li>
+      </ul>
+      <div class="stack">
+        <figure>
+          <div class="shot" data-src="../screenshots/14-environment-replay-s2.png" data-crop="284,60,1352,1020" data-width="760"></div>
+          <figcaption><b>During the replay at S2:</b> REPLAY, “synthetic S2-class profile (demo), not a recorded event”, shelter advisory, “Modeled — illustrative”. Simulated crew.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot" data-src="../screenshots/13-environment-before-replay.png" data-crop="284,124,760,52" data-width="760"></div>
+          <figcaption><b>Before the replay:</b> the data-mode bar as captured (LIVE NOAA feed).</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">5 / 7</div>
+</section>
+
+<!-- 6 — Built to plug into NASA -->
+<section class="slide s6" data-slide="6">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1>Standards-traced, FHIR-ready, offline</h1>
+    <div class="cols">
+      <ul class="lines dense">
+        <li>NASA-STD-3001 items traced in the rules: V2 6004 CO₂ · V1 4029 ALARA · V1 4030 career dose · V1 4031 solar-event dose · V2 6012/6013 temperature and humidity · V2 6109 water</li>
+        <li>FHIR-style R4 Bundle export (LOINC, UCUM, provenance, quality, verdict) and CSV</li>
+        <li>Delay-aware Earth link: packet “arrives in 11 min (demo: 11 s)”, separate flight-surgeon view</li>
+        <li>One local crew health data service with adapters, after NASA’s CHP-IDSP idea; offline-first PWA</li>
+        <li><b>Real vs simulated:</b> real = NOAA flux, NASA OSDR pre-flight blood anchors, published limits, your own measurements · simulated = crew and daily readings, cabin sensors, storm replay · modeled = Mars-transit delay, event dose · demo = readiness, demo band edges</li>
+      </ul>
+      <div class="stack">
+        <figure>
+          <div class="shot" data-src="../screenshots/17-earth-link-packet-in-transit.png" data-crop="1087,82,569,356" data-width="620"></div>
+          <figcaption><b>Earth link after Send:</b> packet in transit, modeled delay (demo), countdown. Simulated crew.</figcaption>
+        </figure>
+        <figure>
+          <div class="shot" data-src="../screenshots/23-limits.png" data-crop="384,470,1152,402" data-width="820"></div>
+          <figcaption><b>Limits page in the app:</b> what is real, measured, simulated, modeled or demo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">6 / 7</div>
+</section>
+
+<!-- 7 — Impact and next steps -->
+<section class="slide s7" data-slide="7">
+  <div class="mark"><img src="argus-mark.svg" alt="">ARGUS</div>
+  <div>
+    <h1>Decisions on board, when Earth is minutes away</h1>
+    <div class="cols">
+      <ul class="lines dense">
+        <li>Impact: Earth-independent crew care; the same personal-baseline approach for remote and rural care on Earth</li>
+        <li>Covers the challenge: indicators, camera and keyboard input, verdict and guidance, clickable body, charts, colour coding, gamification, measurement prompts, six mission environments (see CHALLENGE_COVERAGE.md)</li>
+        <li>Next: paired camera-pulse validation, a ruler check of the vision calibration, face-scan trials, device adapters (Bio-Monitor, ARCHeR style), clinical review of demo thresholds, encryption at rest</li>
+        <li>Try it: <span class="mono nowrap">{{liveUrlShort}}</span> (PIN 2026) · <a href="{{videoUrl}}" style="color:inherit">30-second video: docs/submission/video in the repo</a></li>
+      </ul>
+      <div class="stack">
+        <div class="qr">
+          <img src="qr-live.svg" alt="QR code of the live demo URL">
+          <div class="url">{{liveUrlShort}}<small>Demo PIN 2026 · code: <span class="mono">{{repoUrlShort}}</span></small></div>
+        </div>
+        <figure>
+          <div class="shot" data-src="../screenshots/02-bridge-cmo-md143.png" data-crop="264,430,920,590" data-width="600"></div>
+          <figcaption><b>Mission Bridge, CMO, day 143:</b> K. Osei Act, caught only by personal baseline. <span class="sim">SIMULATED DATA</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">7 / 7</div>
+</section>
+
+<script>
+  // Crop each screenshot: data-crop = x,y,w,h in the 1920×1080 source, displayed at data-width px.
+  for (const el of document.querySelectorAll('.shot')) {
+    const [x, y, w, h] = el.dataset.crop.split(',').map(Number);
+    const W = Number(el.dataset.width);
+    const s = W / w;
+    el.style.width = `${W}px`;
+    el.style.height = `${Math.round(h * s)}px`;
+    el.style.backgroundImage = `url("${el.dataset.src}")`;
+    el.style.backgroundSize = `${Math.round(1920 * s)}px ${Math.round(1080 * s)}px`;
+    el.style.backgroundPosition = `${-Math.round(x * s)}px ${-Math.round(y * s)}px`;
+  }
+</script>
+</body>
+</html>

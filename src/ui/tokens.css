@@ -1,0 +1,191 @@
+/*
+ * ARGUS design tokens — docs/11_UI_UX_SPEC.md §2.
+ * Raw tokens keep the names used in the spec (--bg, --surface-1, --ok, ...). They are mapped into Tailwind v4
+ * with `@theme inline`, so utilities such as `bg-surface-1`, `text-text-2`, `border-watch-border` follow these
+ * variables. Themes only override the raw variables:
+ *   :root                       dark (default)
+ *   :root[data-theme='light']   light
+ *   :root[data-theme='hc']      high contrast (pure black/white + status hues, 2 px borders)
+ *   :root[data-glove='true']    glove mode: 56 px targets, font +2 px
+ * The attributes are set by `useApplyPreferences()` (src/ui/preferences.ts) from `useUiStore`.
+ *
+ * Deviations from the spec hex values (WCAG AA, docs/DECISIONS.md decision 3):
+ *   dark --text-3 #6B7785 → #7D8996 (spec value is 4.15:1 on surface-1, below AA 4.5:1).
+ *   `--<status>-fg` is new: the colour used for status *text*. Equal to the status hue where that hue passes AA on
+ *   its own -bg tint; darker (light theme) or lighter (NO_DATA grey) where it does not. Icons and borders keep
+ *   the spec hue.
+ */
+
+:root {
+  color-scheme: dark;
+
+  /* Neutrals */
+  --bg: #07090d;
+  --surface-1: #0d1117;
+  --surface-2: #131a22;
+  --border: #1e2630;
+  --border-strong: #2b3542;
+  --text: #e6edf3;
+  --text-2: #9aa7b4;
+  --text-3: #7d8996;
+
+  /* Brand accent (focus ring, selected nav) — not a status colour */
+  --brand: #2dd4bf;
+  --brand-fg: #04201c;
+
+  /* Status */
+  --ok: #3dd68c;
+  --info: #5ab8ff;
+  --watch: #f5b83d;
+  --act: #ff5a5f;
+  --muted: #5b6672;
+
+  /* Status text colours (AA on the -bg tint and on surfaces) */
+  --ok-fg: var(--ok);
+  --info-fg: var(--info);
+  --watch-fg: var(--watch);
+  --act-fg: var(--act);
+  --muted-fg: #9aa7b4;
+
+  /* Overlay scrim and the one subtle overlay shadow (doc 11 §2: elevation by surface colour) */
+  --scrim: rgb(0 0 0 / 0.6);
+  --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.45);
+
+  /* Border width (2 px in high contrast) */
+  --border-w: 1px;
+
+  /* Minimum interactive target (doc 11 §1.6) and font boost (glove mode +2 px) */
+  --target-min: 44px;
+  --font-boost: 0px;
+
+  /* Motion (doc 11 §1.5: 150–250 ms ease-out) */
+  --dur-fast: 150ms;
+  --dur-base: 200ms;
+  --dur-slow: 250ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Status variants: -bg = 12 % alpha, -border = 35 % alpha (all themes) */
+:root {
+  --ok-bg: color-mix(in srgb, var(--ok) 12%, transparent);
+  --ok-border: color-mix(in srgb, var(--ok) 35%, transparent);
+  --info-bg: color-mix(in srgb, var(--info) 12%, transparent);
+  --info-border: color-mix(in srgb, var(--info) 35%, transparent);
+  --watch-bg: color-mix(in srgb, var(--watch) 12%, transparent);
+  --watch-border: color-mix(in srgb, var(--watch) 35%, transparent);
+  --act-bg: color-mix(in srgb, var(--act) 12%, transparent);
+  --act-border: color-mix(in srgb, var(--act) 35%, transparent);
+  --muted-bg: color-mix(in srgb, var(--muted) 12%, transparent);
+  --muted-border: color-mix(in srgb, var(--muted) 35%, transparent);
+  --brand-bg: color-mix(in srgb, var(--brand) 12%, transparent);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f7f9fb;
+  --surface-1: #ffffff;
+  --surface-2: #eef2f6;
+  --border: #d5dce3;
+  --border-strong: #b7c1cc;
+  --text: #0b1220;
+  --text-2: #3e4c5b;
+  --text-3: #5a6878;
+  --brand: #0f766e;
+  --brand-fg: #ffffff;
+  --ok: #13804f;
+  --info: #1c6fb8;
+  --watch: #a86a00;
+  --act: #c42b30;
+  --muted: #5b6672;
+  --ok-fg: #0b6b40;
+  --info-fg: #175e9e;
+  --watch-fg: #7f5000;
+  --act-fg: #a82227;
+  --muted-fg: #4f5965;
+  --scrim: rgb(11 18 32 / 0.4);
+  --shadow-overlay: 0 12px 32px rgb(11 18 32 / 0.18);
+}
+
+:root[data-theme='hc'] {
+  color-scheme: dark;
+  --bg: #000000;
+  --surface-1: #000000;
+  --surface-2: #141414;
+  --border: #ffffff;
+  --border-strong: #ffffff;
+  --text: #ffffff;
+  --text-2: #ffffff;
+  --text-3: #e0e0e0;
+  --brand: #5eead4;
+  --brand-fg: #000000;
+  --muted: #a3acb6;
+  --muted-fg: #d0d6dc;
+  --scrim: rgb(0 0 0 / 0.8);
+  --border-w: 2px;
+}
+
+:root[data-glove='true'] {
+  --target-min: 56px;
+  --font-boost: 2px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+  --color-brand: var(--brand);
+  --color-brand-fg: var(--brand-fg);
+  --color-brand-bg: var(--brand-bg);
+  --color-scrim: var(--scrim);
+
+  --color-ok: var(--ok);
+  --color-ok-bg: var(--ok-bg);
+  --color-ok-border: var(--ok-border);
+  --color-ok-fg: var(--ok-fg);
+  --color-info: var(--info);
+  --color-info-bg: var(--info-bg);
+  --color-info-border: var(--info-border);
+  --color-info-fg: var(--info-fg);
+  --color-watch: var(--watch);
+  --color-watch-bg: var(--watch-bg);
+  --color-watch-border: var(--watch-border);
+  --color-watch-fg: var(--watch-fg);
+  --color-act: var(--act);
+  --color-act-bg: var(--act-bg);
+  --color-act-border: var(--act-border);
+  --color-act-fg: var(--act-fg);
+  --color-muted: var(--muted);
+  --color-muted-bg: var(--muted-bg);
+  --color-muted-border: var(--muted-border);
+  --color-muted-fg: var(--muted-fg);
+
+  --spacing-target: var(--target-min);
+  --shadow-overlay: var(--shadow-overlay);
+
+  /* Type scale 12 / 14 / 16 / 20 / 24 / 32 / 48 px, each + --font-boost (glove mode) */
+  --text-xs: calc(0.75rem + var(--font-boost));
+  --text-sm: calc(0.875rem + var(--font-boost));
+  --text-base: calc(1rem + var(--font-boost));
+  --text-xl: calc(1.25rem + var(--font-boost));
+  --text-2xl: calc(1.5rem + var(--font-boost));
+  --text-3xl: calc(2rem + var(--font-boost));
+  --text-5xl: calc(3rem + var(--font-boost));
+
+  --ease-out: var(--ease-out);
+}
+
+@theme {
+  /* Typography: IBM Plex Sans (UI), IBM Plex Mono (telemetry, numbers, timestamps) — loaded via @fontsource */
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Radius: 12 px cards, 8 px controls, 999 px pills */
+  --radius-card: 12px;
+  --radius-control: 8px;
+  --radius-pill: 999px;
+}

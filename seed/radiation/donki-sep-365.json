@@ -1,0 +1,11 @@
+{
+ "status": "unavailable",
+ "fetchedAt": "2026-11-14T13:26:02.142Z",
+ "startDate": "2025-11-14",
+ "endDate": "2026-11-14",
+ "sourceIds": [
+  "SRC_DONKI"
+ ],
+ "note": "DONKI could not be downloaded on 2026-11-14: https://kauai.ccmc.gsfc.nasa.gov/DONKI/WS/get/SEP?startDate=2025-11-14&endDate=2026-11-14: TypeError: fetch failed (read ECONNRESET). This list is empty because the download failed, not because no SEP events occurred. Re-run npm run fetch:data when the service answers.",
+ "events": []
+}

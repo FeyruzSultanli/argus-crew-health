@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+@import './ui/tokens.css';
+
+@custom-variant hc (&:where([data-theme='hc'], [data-theme='hc'] *));
+
+@layer base {
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  /* WCAG 2.4.11: keyboard focus scrolled into view (Tab forward) never lands under the sticky mission-scrubber
+     dock (56 px). A matching scroll-padding-top for the sticky header changed the Bridge's initial scroll position
+     (e2e/a11y.spec.ts then saw a target under the dock) and is left out. */
+  html {
+    scroll-padding-bottom: 4.5rem;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: calc(1rem + var(--font-boost));
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+  }
+
+  /* Numbers are tabular everywhere they use the mono face (doc 11 §2 typography). */
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* The in-app "Reduce motion" setting (FR-SET-1) does the same as the OS preference. */
+  :root[data-reduced-motion='true'] *,
+  :root[data-reduced-motion='true'] *::before,
+  :root[data-reduced-motion='true'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * High-contrast theme: 2 px hairlines (doc 11 §2). Unlayered so it wins over the `border` utility.
+ */
+:root[data-theme='hc'] .border {
+  border-width: var(--border-w);
+}
+:root[data-theme='hc'] .border-b {
+  border-bottom-width: var(--border-w);
+}
+:root[data-theme='hc'] .border-t {
+  border-top-width: var(--border-w);
+}
+
+.sr-only-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

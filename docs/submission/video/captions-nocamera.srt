@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:03,000
+Mars transit, day 143. Earth is 11 minutes away (modeled).
+
+2
+00:00:03,000 --> 00:00:07,000
+Normal for Earth and space rules. Caught only by her baseline.
+
+3
+00:00:07,000 --> 00:00:09,000
+Laptop-camera pulse: video stays on this device. Only the number is saved.
+
+4
+00:00:09,000 --> 00:00:14,000
+Reaction Self-Test, 3 minutes (scripted test run shown).
+
+5
+00:00:14,000 --> 00:00:20,000
+Solar storm replay (synthetic): shelter advised, every crew dose tracked.
+
+6
+00:00:20,000 --> 00:00:25,000
+Crew acts now. The flight surgeon gets the packet 11 minutes later.
+
+7
+00:00:25,000 --> 00:00:29,000
+ARGUS. Personal. Space. Earth. Decisions on board.

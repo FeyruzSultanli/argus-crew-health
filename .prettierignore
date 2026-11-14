@@ -1,0 +1,15 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+public/seed
+public/mediapipe
+package-lock.json
+# Spec and seed files are hand-maintained; do not reformat them.
+docs
+seed
+*.md
+# Contract files are kept verbatim with docs 05/06/07 (aligned comments).
+src/domain/types.ts
+src/services/healthService.ts

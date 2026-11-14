@@ -1,0 +1,264 @@
+{
+  "_note": "Protocol walkthroughs (FR-HELP-3), content of docs/07_CLINICAL_RULES.md §5. Exactly the five ProtocolIds of doc 06 §1a, in table order. Step wording = the key steps of the table turned into short imperative sentences, nothing added; `tableText` is the table fragment each step renders. tag 'source' + sourceIds only where the source's `says` covers what the step acts on; every other step is 'demo wording' with no source. `timerSec` only where the table states a time. The last step of every protocol is the generic end step (kind 'send-to-surgeon'); where the table's own last step is 'notify surgeon' that step is the end step (its tableText says so). triggerRule schema: a node is a group { all: [node…] } or { any: [node…] }, or a condition — { signal, layer?, atLeast } (that signal's verdict is at least WATCH/ACT/EXPECTED by severity; layer personal|space|earth, omitted = combined verdict), { symptom } (key of the doc 07 §4.17 checklist ticked today), { cabin: 'co2Avg7dMmHg', atLeast } (number, mmHg), { spaceWeather: 'sScale', atLeast } (NOAA S level 0–5) or { spaceWeather: 's100Alert' } (≥100 MeV alert on). 'fever' has no checklist item (doc 07 §4.17 lists none), so the infection trigger uses the rash symptom; a raised temperature enters through the body_temp condition.",
+  "protocols": [
+    {
+      "id": "suspected-infection",
+      "title": "Suspected infection",
+      "summary": "Steps when your resting heart rate is above your usual and your temperature is up, or a rash is ticked.",
+      "trigger": "HR personal ≥ WATCH + temp WATCH, or rash/fever symptom",
+      "triggerPlain": "Your resting heart rate is at Watch or higher on your personal baseline and your body temperature is at Watch or higher, or rash is ticked in the symptom checklist.",
+      "triggerRule": {
+        "any": [
+          {
+            "all": [
+              { "signal": "heart_rate_rest", "layer": "personal", "atLeast": "WATCH" },
+              { "signal": "body_temp", "atLeast": "WATCH" }
+            ]
+          },
+          { "symptom": "rash" }
+        ]
+      },
+      "triggerSourceIds": [],
+      "sourceIds": [],
+      "relatedSignalIds": ["heart_rate_rest", "body_temp", "symptoms"],
+      "keywords": ["infection", "fever", "rash", "sick", "ill", "pulse", "heart rate", "temperature", "overreaching"],
+      "steps": [
+        { "id": "s1", "text": "Rest.", "tag": "demo wording", "sourceIds": [], "tableText": "rest" },
+        {
+          "id": "s2",
+          "text": "Re-measure heart rate and temperature in 2 hours.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "timerSec": 7200,
+          "tableText": "re-measure HR & temp in 2 h"
+        },
+        { "id": "s3", "text": "Hydrate.", "tag": "demo wording", "sourceIds": [], "tableText": "hydrate" },
+        {
+          "id": "s4",
+          "text": "Isolate shared items.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "isolate shared items"
+        },
+        { "id": "s5", "text": "Log your symptoms.", "tag": "demo wording", "sourceIds": [], "tableText": "log symptoms" },
+        {
+          "id": "s6",
+          "text": "Send a report to the flight surgeon.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "kind": "send-to-surgeon",
+          "tableText": "notify surgeon"
+        }
+      ]
+    },
+    {
+      "id": "spe-shelter",
+      "title": "SPE shelter",
+      "summary": "Steps when a solar particle event (SPE) raises the radiation level: shelter, dosimeter, less EVA.",
+      "trigger": "S-scale ≥ S2 or s100Alert (demo policy)",
+      "triggerPlain": "The NOAA solar radiation storm level is S2 or higher, or the ≥100 MeV proton alert is on [SRC_NOAA_SWPC_PROTONS]. When to shelter is a demo policy [SRC_DEMO_RADIATION_MODEL].",
+      "triggerRule": {
+        "any": [{ "spaceWeather": "sScale", "atLeast": 2 }, { "spaceWeather": "s100Alert" }]
+      },
+      "triggerSourceIds": ["SRC_NOAA_SWPC_PROTONS", "SRC_DEMO_RADIATION_MODEL"],
+      "sourceIds": ["SRC_STD3001_RAD"],
+      "relatedSignalIds": ["radiation_dose"],
+      "keywords": ["radiation", "storm", "solar", "spe", "flare", "proton", "shelter", "dosimeter", "space weather", "eva"],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Move to the shelter location.",
+          "tag": "source",
+          "sourceIds": ["SRC_STD3001_RAD"],
+          "tableText": "move to shelter location"
+        },
+        {
+          "id": "s2",
+          "text": "Wear your dosimeter.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "wear dosimeter"
+        },
+        {
+          "id": "s3",
+          "text": "Reduce EVA (spacewalks).",
+          "tag": "source",
+          "sourceIds": ["SRC_STD3001_RAD"],
+          "tableText": "reduce EVA"
+        },
+        {
+          "id": "s4",
+          "text": "Log your time in shelter.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "log time-in-shelter"
+        },
+        {
+          "id": "s5",
+          "text": "Follow the Earth radiation team's instructions.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "follow Earth radiation team instructions [SRC_STD3001_RAD ALARA]"
+        },
+        {
+          "id": "s6",
+          "text": "Send a report to the flight surgeon.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "kind": "send-to-surgeon",
+          "tableText": null
+        }
+      ]
+    },
+    {
+      "id": "co2-headache",
+      "title": "CO₂ headache",
+      "summary": "Steps when headache is ticked and the cabin CO₂ 7-day average is high.",
+      "trigger": "headache + CO₂ 7-day ≥ 2.5",
+      "triggerPlain": "Headache is ticked in the symptom checklist and the cabin CO₂ 7-day average is 2.5 mmHg or more [SRC_NASA_CO2_PAGE].",
+      "triggerRule": {
+        "all": [{ "symptom": "headache" }, { "cabin": "co2Avg7dMmHg", "atLeast": 2.5 }]
+      },
+      "triggerSourceIds": ["SRC_NASA_CO2_PAGE"],
+      "sourceIds": ["SRC_NASA_CO2_PAGE"],
+      "relatedSignalIds": ["cabin_co2", "symptoms"],
+      "keywords": ["headache", "head", "co2", "carbon dioxide", "air", "ventilation", "airflow", "stuffy", "cabin"],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Check the CO₂ panel.",
+          "tag": "source",
+          "sourceIds": ["SRC_NASA_CO2_PAGE"],
+          "tableText": "check CO₂ panel"
+        },
+        {
+          "id": "s2",
+          "text": "Ventilate the sleep station or improve airflow.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "ventilate sleep station/improve airflow"
+        },
+        { "id": "s3", "text": "Hydrate.", "tag": "demo wording", "sourceIds": [], "tableText": "hydrate" },
+        {
+          "id": "s4",
+          "text": "Re-check in 1 hour.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "timerSec": 3600,
+          "tableText": "re-check in 1 h [SRC_NASA_CO2_PAGE]"
+        },
+        {
+          "id": "s5",
+          "text": "Send a report to the flight surgeon.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "kind": "send-to-surgeon",
+          "tableText": null
+        }
+      ]
+    },
+    {
+      "id": "vision-change",
+      "title": "Vision change",
+      "summary": "Steps when the Amsler grid shows new marked cells or near acuity is at Watch.",
+      "trigger": "Amsler new cells / acuity WATCH",
+      "triggerPlain": "The Amsler grid shows new marked cells compared with your previous map, or your near acuity is at Watch or higher.",
+      "triggerRule": {
+        "any": [
+          { "signal": "amsler", "layer": "space", "atLeast": "WATCH" },
+          { "signal": "near_acuity", "atLeast": "WATCH" }
+        ]
+      },
+      "triggerSourceIds": [],
+      "sourceIds": ["SRC_VISION_ISS"],
+      "relatedSignalIds": ["amsler", "near_acuity", "symptoms"],
+      "keywords": ["vision", "eye", "eyes", "sight", "blurry", "blurred", "wavy", "amsler", "acuity", "glasses", "sans"],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Repeat the test with each eye.",
+          "tag": "source",
+          "sourceIds": ["SRC_VISION_ISS"],
+          "tableText": "repeat test each eye"
+        },
+        {
+          "id": "s2",
+          "text": "Use your anticipation glasses if they were issued.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "use anticipation glasses if issued"
+        },
+        {
+          "id": "s3",
+          "text": "Schedule an imaging exam.",
+          "tag": "source",
+          "sourceIds": ["SRC_VISION_ISS"],
+          "tableText": "schedule imaging exam"
+        },
+        {
+          "id": "s4",
+          "text": "Send a report to the flight surgeon.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "kind": "send-to-surgeon",
+          "tableText": "notify surgeon [SRC_VISION_ISS]"
+        }
+      ]
+    },
+    {
+      "id": "sleep-debt",
+      "title": "Sleep debt",
+      "summary": "Steps when short sleep and a slower Reaction Self-Test show up together.",
+      "trigger": "sleep WATCH + reaction WATCH",
+      "triggerPlain": "Sleep duration is at Watch or higher and the Reaction Self-Test is at Watch or higher.",
+      "triggerRule": {
+        "all": [
+          { "signal": "sleep_duration", "atLeast": "WATCH" },
+          { "signal": "reaction_test", "atLeast": "WATCH" }
+        ]
+      },
+      "triggerSourceIds": [],
+      "sourceIds": ["SRC_SLEEP_BARGER"],
+      "relatedSignalIds": ["sleep_duration", "reaction_test"],
+      "keywords": ["sleep", "tired", "fatigue", "sleepy", "exhausted", "insomnia", "rest", "lapses", "reaction", "alertness"],
+      "steps": [
+        {
+          "id": "s1",
+          "text": "Protect your next sleep window.",
+          "tag": "source",
+          "sourceIds": ["SRC_SLEEP_BARGER"],
+          "tableText": "protect next sleep window"
+        },
+        {
+          "id": "s2",
+          "text": "Follow light and schedule hygiene.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "light/schedule hygiene"
+        },
+        {
+          "id": "s3",
+          "text": "Avoid critical tasks if your lapses are high.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "avoid critical tasks if lapses high"
+        },
+        {
+          "id": "s4",
+          "text": "Re-test with the Reaction Self-Test.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "tableText": "re-test [SRC_SLEEP_BARGER]"
+        },
+        {
+          "id": "s5",
+          "text": "Send a report to the flight surgeon.",
+          "tag": "demo wording",
+          "sourceIds": [],
+          "kind": "send-to-surgeon",
+          "tableText": null
+        }
+      ]
+    }
+  ]
+}

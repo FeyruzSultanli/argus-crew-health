@@ -1,0 +1,26 @@
+{
+  "_note": "Four FICTIONAL crew members. Vital-sign baselines are SIMULATED (label them). Blood anchors come from NASA OSDR OSD-569 via seed/osdr/preflight-anchors.json; the osdrSubject mapping must match sex-specific lab ranges (doc 06 §6).",
+  "crew": [
+    {
+      "id": "c1", "displayName": "R. Vance", "role": "Commander", "isCMO": false, "sex": "male", "ageYears": 47,
+      "careerDoseMsvPreMission": 120, "osdrSubject": "C001",
+      "simulatedBaseline": { "heart_rate_rest": 62, "systolic": 122, "diastolic": 78, "spo2": 98, "body_temp": 36.6, "glucose_fasting": 92, "sleep_duration": 7.1, "mood": 4.0, "body_mass": 82.0, "pvt_speed": 3.6, "exercise_plan_min": 120, "hydration": 2.6 }
+    },
+    {
+      "id": "c2", "displayName": "M. Ito", "role": "Pilot", "isCMO": false, "sex": "male", "ageYears": 41,
+      "careerDoseMsvPreMission": 60, "osdrSubject": "C004",
+      "simulatedBaseline": { "heart_rate_rest": 56, "systolic": 118, "diastolic": 74, "spo2": 98, "body_temp": 36.5, "glucose_fasting": 88, "sleep_duration": 7.3, "mood": 4.2, "body_mass": 74.5, "pvt_speed": 3.9, "exercise_plan_min": 120, "hydration": 2.7 }
+    },
+    {
+      "id": "c3", "displayName": "K. Osei", "role": "Flight engineer", "isCMO": false, "sex": "female", "ageYears": 38,
+      "careerDoseMsvPreMission": 35, "osdrSubject": "C003",
+      "simulatedBaseline": { "heart_rate_rest": 58, "systolic": 112, "diastolic": 70, "spo2": 99, "body_temp": 36.5, "glucose_fasting": 85, "sleep_duration": 7.2, "mood": 4.1, "body_mass": 63.0, "pvt_speed": 4.0, "exercise_plan_min": 120, "hydration": 2.5 },
+      "notes": "Heart-rate baseline 58 with sigma 2 is required for the silent-infection scenario (doc 08 TV-8)."
+    },
+    {
+      "id": "c4", "displayName": "L. Duarte", "role": "Mission specialist", "isCMO": true, "sex": "female", "ageYears": 44,
+      "careerDoseMsvPreMission": 180, "osdrSubject": "C002",
+      "simulatedBaseline": { "heart_rate_rest": 64, "systolic": 120, "diastolic": 76, "spo2": 98, "body_temp": 36.7, "glucose_fasting": 90, "sleep_duration": 6.9, "mood": 3.9, "body_mass": 66.0, "pvt_speed": 3.7, "exercise_plan_min": 120, "hydration": 2.5 }
+    }
+  ]
+}

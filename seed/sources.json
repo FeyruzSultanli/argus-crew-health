@@ -1,0 +1,662 @@
+{
+  "_note": "Single registry of every cited fact. status: verified = read by us at source or reliable summary; partial = real source, details to re-check; demo = our parameter. Never invent URLs.",
+  "sources": [
+    {
+      "id": "SRC_NASA_HAZARDS",
+      "title": "5 Hazards of Human Spaceflight",
+      "publisher": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/hazards/",
+      "says": "Five hazards: space radiation, isolation and confinement, distance from Earth, gravity fields, hostile/closed environments. Mars surface gravity is three-eighths of Earth's.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_NASA_RISKS",
+      "title": "Risks of Human Spaceflight",
+      "publisher": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/risks/",
+      "says": "Lists HRP risks (immune, sensorimotor, cardiovascular, decompression sickness, host-microorganism, hypoxia, nutrition, EVA injury, fitness, SANS, bone; behavioral, teamwork, sleep, systems support, dynamic loads; radiation-induced cancers). Spaceflight stress can reactivate dormant viruses causing rashes.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_NASA_HRP_RESEARCH",
+      "title": "Ongoing HRP Research in Space",
+      "publisher": "NASA Human Research Program",
+      "url": "https://www.nasa.gov/hrp/ongoing-hrp-research/",
+      "says": "Artemis II investigations (ARCHeR, Immune Biomarkers, Standard Measures) and ISS studies (B-Complex, Brain Fluid Pressure, CIPHER, Thigh Cuff, Venous Haemostasis, Zero T2, Tempus Pro, etc.).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CSA_RADIATION",
+      "title": "Monitoring radiation for astronaut health (26 Feb 2026)",
+      "publisher": "Canadian Space Agency",
+      "url": "https://www.asc-csa.gc.ca/eng/news/articles/2026/2026-02-26-monitoring-radiation-astronaut-health.asp",
+      "says": "Neutrons contribute about 30% of total radiation on the ISS; CANS active neutron spectrometer works continuously and autonomously.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CSA_WHY_SCIENCE",
+      "title": "Why do we conduct science experiments in space?",
+      "publisher": "Canadian Space Agency",
+      "url": "https://www.asc-csa.gc.ca/eng/iss/science/why-do-we-conduct-science-experiments-in-space.asp",
+      "says": "Deep-space missions mean more weightlessness, radiation, isolation, communication delay and less reliance on Earth; findings help with osteoporosis, cardiovascular disorders and Type-2 diabetes on Earth.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CHECS_GUIDE",
+      "title": "International Space Station Guide — Systems (CHeCS)",
+      "publisher": "NASA (archived)",
+      "url": "https://webarchive.library.unt.edu/eot2008/20080917150037/http://www.nasa.gov/pdf/167129main_Systems.pdf",
+      "says": "CHeCS comprises the Countermeasures System, Environmental Health System (air, microbes, water, acoustics, radiation) and Health Maintenance System.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_BME",
+      "title": "Biomedical Flight Controllers",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/directorates/esdmd/hhp/biomedical-flight-controllers/",
+      "says": "BME controllers are Mission Control's representatives for CHeCS, monitor bioenvironmental and environmental health data in real time, and work with the flight surgeon.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_MIM_TEMPUS",
+      "title": "Multifunctional Integrated Medical Devices",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/?p=850075",
+      "says": "ISS uses a collection of discrete medical devices to periodically assess crew health; NASA is evaluating a single integrated vital-sign monitoring system (Tempus Pro) for exploration.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_TEMPUS",
+      "title": "Tempus Pro (HRP investigation)",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/reference/tempus-pro",
+      "says": "Study of a commercial telemedicine device's ability to collect and integrate vital data, provide imaging and support near-real-time diagnosis.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_TEMPUS_USABILITY",
+      "title": "Tricorder Tech: Tempus Pro in space testing telemedicine capabilities",
+      "publisher": "Astrobiology.com (reporting NASA abstract)",
+      "url": "https://astrobiology.com/2025/06/16/tricorder-tech-tempus-pro-in-space-testing-telemedicine-capabilities/",
+      "says": "In 2023 JSC chamber tests, novice users connected sensors and took vital signs easily with the iAssist step-by-step guidance.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_IEEE_ASTROSKIN",
+      "title": "Biometric shirt for astronauts gets an Antarctic tryout",
+      "publisher": "IEEE Spectrum",
+      "url": "https://spectrum.ieee.org/biometric-shirt-for-astronauts-gets-an-antarctic-tryout",
+      "says": "CSA chief medical officer: misconception that astronauts are continuously monitored; vital signs are recorded mainly during exercise and spacewalks.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_BIOMONITOR",
+      "title": "Bio-Monitor: Keeping an eye on astronauts' vital signs",
+      "publisher": "Canadian Space Agency",
+      "url": "https://asc-csa.gc.ca/eng/sciences/astroskin.asp",
+      "says": "Smart shirt plus tablet app; measures heart activity, blood pressure, breathing, SpO2, skin temperature, activity; data downlinked for analysis.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_STD_MEASURES",
+      "title": "Standard Measures (NASA Life Sciences Data Archive)",
+      "publisher": "NASA",
+      "url": "https://nlsp.nasa.gov/explore/home/lsda_sm",
+      "says": "Consistent core physiological, psychological and biological measurements of crews before, during and after flight; areas include behavioral health, biochemistry, bone, cardiovascular, immunology, muscle, ocular, sensorimotor.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_BHP_SM",
+      "title": "Overview of NASA Behavioral Health & Performance Standard Measures",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20190000670/downloads/20190000670.pdf",
+      "says": "BHP Standard Measures include a neurocognitive battery, actigraphy, proximity sensors, cardiovascular monitors and mood/team self-reports.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_COGNITION",
+      "title": "Cognition Test Battery (UPenn)",
+      "publisher": "University of Pennsylvania",
+      "url": "https://www.med.upenn.edu/uep/cognition.html",
+      "says": "10-test battery developed for NASA, part of Standard Measures; includes a validated 3-minute PVT (PVT-B); used on ISS without reliable internet.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_PVT_SPINOFF",
+      "title": "Innovative software tools measure behavioral alertness (Spinoff 2013)",
+      "publisher": "NASA Spinoff",
+      "url": "https://spinoff.nasa.gov/Spinoff2013/hm_1.html",
+      "says": "PVT-B self test renamed Reaction Self-Test on ISS; informs astronauts when performance drops below optimal.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_PVT_B_BASNER2011",
+      "title": "Basner M, Mollicone D, Dinges DF. Validity and sensitivity of a brief psychomotor vigilance test (PVT-B) to total and partial sleep deprivation. Acta Astronautica 2011",
+      "publisher": "Acta Astronautica (author manuscript on PubMed Central)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3197786",
+      "says": "PVT-B: test shortened from 10 min to 3 min and inter-stimulus interval from 2-10 s to 1-4 s; lapse threshold lowered from 500 ms to 355 ms. Checked at source 14 Nov 2026 (some later papers describe the ISI as 2-5 s; the original paper says 1-4 s).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_VISION_ISS",
+      "title": "Ocular surveillance in astronauts (NTRS 20170009173)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20170009173/downloads/20170009173.pdf",
+      "says": "On-orbit vision exam: distance acuity (Acuity Pro on laptop), near acuity (handheld card), Amsler grid (laptop), plus ultrasound, fundoscopy, OCT.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_SANS_CAMBRIDGE",
+      "title": "The case for expanding visual assessments during spaceflight (Prehospital and Disaster Medicine)",
+      "publisher": "Cambridge University Press",
+      "url": "https://www.cambridge.org/core/product/EC1625C4BE6DCD3511152AC711E4EB09/core-reader",
+      "says": "In-orbit functional vision assessment: static acuity, Amsler grid, self-report; 69% of US ISS crew had >20 um RNFL thickening in at least one eye on OCT.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_SANS_EYE_NATURE",
+      "title": "SANS and vision (Eye, 2024)",
+      "publisher": "Nature Eye",
+      "url": "https://www.nature.com/articles/s41433-024-03124-y.pdf",
+      "says": "Space Anticipation Glasses are kept aboard ISS to mitigate the hyperopic shift associated with SANS; in-flight testing includes acuity and Amsler grid.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_OCULAR_CADENCE",
+      "title": "Ocular Health in ISS Crews (NTRS 20150003006)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20150003006/downloads/20150003006.pdf",
+      "says": "Research protocol in-flight tests on flight days 10, 30, 60, 90, 120 and R-30; computer-based visual tests include acuity, Amsler grid, contrast sensitivity and a questionnaire. Checked at source 14 Nov 2026.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_ARCHER_NASA",
+      "title": "Actigraphy device for Artemis II human health study",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/image-detail/amf-jsc2025e075542_alt/",
+      "says": "ARCHeR wrist device measures motion, sleep patterns and light exposure.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_ARCHER_GIZMODO",
+      "title": "NASA's Artemis 2 will test human health in deep space like never before",
+      "publisher": "Gizmodo",
+      "url": "https://gizmodo.com/nasas-artemis-2-will-test-human-health-in-deep-space-like-never-before-2000716326",
+      "says": "ARCHeR wristbands support real-time health monitoring; each crew member carries a Crew Active Dosimeter; Orion has thousands of radiation sensors.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_MDA",
+      "title": "Medical Data Architecture capabilities and design (NTRS 20170009788)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/citations/20170009788",
+      "says": "Test Bed 1 automates collection of ECG, HR, skin temp, respiration, medications from Astroskin, ECG device and Dose Tracker into an EMR for the CMO; standalone operation.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CHP_IDSP_ASMA",
+      "title": "Crew Health and Performance Integrated Data System Platform (AsMA 2025)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20250004859/downloads/CHP-IDSP_AsMA%202025.pdf",
+      "says": "Back-end platform to acquire, process, store and distribute integrated crew health data for crew and ground; data currently spread across many systems; chest pain scenario.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CHP_IDSP_IWS",
+      "title": "CHP-IDSP: Project Updates (HRP IWS 2025)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20250000330/downloads/CHP-IDSP%20Project%20Updates_IWS%202025.pdf",
+      "says": "Periodic Health Status exam data flows; CMO uses a personal computing device integrated with the vehicle's CHP-IDSP; Orion medical kit integration.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_IMM",
+      "title": "The NASA Integrated Medical Model (IMM) overview",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/nasa-integrated-medical-model-imm-overview/",
+      "says": "Stochastic model of 100 spaceflight medical conditions; outputs total medical events, Crew Health Index (0-100%), resource use.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_IMM_LIST",
+      "title": "Integrated Medical Model overview (NTRS 20150002713)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20150002713/downloads/20150002713.pdf",
+      "says": "Lists the 100 IMM medical conditions (47 have occurred, 53 possible).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EIMO",
+      "title": "Lemery J, Easter B, Lehnhardt K. Earth Independent Medical Operations: Foundations to Advance Long Duration Mission Health (AsMA 2023 presentation)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20230007863/downloads/EIMO.AsMA2023.Lemery.final.pdf",
+      "says": "NASA Exploration Medical Capability (HRP) presentation, AsMA May 2023. Defines EIMO as the gradual transition of medical care and decision making from terrestrial to space-based assets. Exploration missions have no real-time communications and no evacuation; communication latency calls for on-board decision support and a higher on-board medical capability. Checked 14 Nov 2026 (PDF text).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_STD3001_CO2",
+      "title": "OCHMO-TB-004 Carbon Dioxide technical brief",
+      "publisher": "NASA OCHMO",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/12/ochmo-tb-004-carbon-dioxide.pdf",
+      "says": "NASA-STD-3001 V2 6004: 1-hour average ppCO2 in habitable volume no more than 3 mmHg; headaches reported at 2.8-4.5 mmHg; fatigue/malaise above 4.5 mmHg.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_NASA_CO2_PAGE",
+      "title": "OCHMO-TB-004 Carbon Dioxide (web)",
+      "publisher": "NASA OCHMO",
+      "url": "https://www.nasa.gov/ochmo-tb-004-carbon-dioxide-2/",
+      "says": "To keep headache risk below 1%, 7-day average CO2 must stay below 2.5 mmHg; 0.5% CO2 = 3.8 mmHg; 3 mmHg limit keeps headache incidence below 1.4%.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CO2_ICES_LIMITS",
+      "title": "McCray M, Sturtz R. Using CFD to Predict Inspired CO2 and O2 after Ventilation Shutoff During a Gateway Emergency Response or Maintenance (ICES-2025-402)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20250006273/downloads/ICES-2025-402.pdf",
+      "says": "Uses time-limited ppCO2 exposure bands: up to nominal indefinite; nominal-6.8 mmHg 8 h; 6.8-10 mmHg 4 h; 10-15 mmHg 1 h (re-checked in the PDF 14 Nov 2026). The document does not say which requirement the bands come from, so the 6.8 mmHg ACT line stays a demo choice based on this source (the rule also cites SRC_DEMO_RULE_BANDS).",
+      "status": "partial",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_OSHA_CO2",
+      "title": "OSHA Occupational Chemical Database: Carbon dioxide",
+      "publisher": "US OSHA",
+      "url": "https://www.osha.gov/chemicaldata/183",
+      "says": "OSHA PEL (General Industry, 29 CFR 1910.1000 Table Z-1): 5,000 ppm (9,000 mg/m3) as an 8-hour TWA; NIOSH REL 5,000 ppm TWA with a 30,000 ppm STEL. Checked 14 Nov 2026. The 3.8 mmHg equivalent is from SRC_NASA_CO2_PAGE (0.5% CO2 = 3.8 mmHg), not from this page.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_STD3001_RAD",
+      "title": "OCHMO-TB-020 Design for Ionizing Radiation Protection",
+      "publisher": "NASA OCHMO",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/radiation-protection-technical-brief-ochmo.pdf",
+      "says": "V1 4030 career effective dose < 600 mSv (all ages and sexes); V1 4031 SPE design limit < 250 mSv; V1 4029 ALARA.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_OCHMO_OVERVIEW",
+      "title": "OCHMO standards overview (Sept 2021)",
+      "publisher": "NASA OCHMO",
+      "url": "https://www.nasa.gov/sites/default/files/atoms/files/ochmo_standards_overview_sept_15_2021_francisco.pdf",
+      "says": "Career 600 mSv; SPE 250 mSv; GCR design target below 1.3 mSv/day in free space and 0.8 mSv/day on planetary surfaces.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_STD3001_ECLSS",
+      "title": "OCHMO-TB-002 ECLSS: Human-Centered Approach",
+      "publisher": "NASA OCHMO",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/07/eclss-technical-brief-ochmo.pdf",
+      "says": "V2 6012 health limits 18 C/75% RH to 27 C/25% RH; V2 6013 performance zone 20-25 C and 30-60% RH; V2 6109 water at least 2.5 L/day per crewmember; V2 7003 average 3,035 kcal/day.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_SLEEP_BARGER",
+      "title": "Barger LK et al. Prevalence of sleep deficiency and use of hypnotic drugs in astronauts. Lancet Neurology 2014",
+      "publisher": "Brigham and Women's Hospital via ScienceDaily",
+      "url": "https://www.sciencedaily.com/releases/2014/08/140807215803.htm",
+      "says": "NASA schedules 8.5 h sleep; measured mean sleep was ~6.09 h on ISS missions (5.96 h shuttle).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_BONE_NASA",
+      "title": "Risk of Spaceflight-Induced Bone Changes",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/reference/risk-of-spaceflight-induced-bone-changes/",
+      "says": "Bones lose 1-1.5% density per month on 4-6 month missions; exercise is essential.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EXERCISE_2H",
+      "title": "Astronaut Exercise (ISS research)",
+      "publisher": "NASA",
+      "url": "https://www.nasa.gov/missions/station/iss-research/astronaut-exercise",
+      "says": "ISS crew members average about two hours of exercise per day (schedules allot about 2.5 h including set-up).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_KIDNEY_STONE_NASA",
+      "title": "Sibonga JD, Pietrzyk R. Evidence Report: Risk of Renal Stone Formation (NASA HRP, 2017; NTRS 20170004709)",
+      "publisher": "NASA NTRS",
+      "url": "https://ntrs.nasa.gov/api/citations/20170004709/downloads/20170004709.pdf",
+      "says": "Risk factors for stone formation in spaceflight include increased calcium excretion due to net bone resorption and low urine volume; urine analyses of crew showed hypercalciuria and reduced urine volumes. Checked 14 Nov 2026 (PDF text).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_HCT_FLIGHT",
+      "title": "Kunz H et al. Alterations in hematologic indices during long-duration spaceflight. BMC Hematology 2017",
+      "publisher": "BMC Hematology",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5590186",
+      "says": "31 ISS astronauts: hematocrit was 12.2 %, 12.2 % and 10.0 % higher (relative) at early, mid and late flight than pre-flight; samples were analysed up to 48 h after collection and that delay alone raised hematocrit by about 4.7 % in ground controls, so part of the rise is an artefact. RBC and hemoglobin were also elevated; values returned to baseline within 30 days of landing. Checked 14 Nov 2026 (abstract and publisher summary).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_CORE_TEMP_STAHN",
+      "title": "Stahn AC et al. Increased core body temperature in astronauts during long-duration space missions. Scientific Reports 2017",
+      "publisher": "Scientific Reports",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5701078/",
+      "says": "Resting core body temperature on the ISS was about 1.0 C above pre-flight baseline, developing gradually over about 2.5 months; during exercise it rose higher and faster than on Earth. Measured with a non-invasive forehead sensor. Checked 14 Nov 2026. ARGUS applies no shift in the demo.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_OSD569",
+      "title": "NASA OSDR OSD-569 — Inspiration4 complete blood count",
+      "publisher": "NASA OSDR",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-569",
+      "says": "Real CBC values for 4 anonymised commercial astronauts at L-92, L-44, L-3 and post-flight, with lab reference ranges (e.g., hematocrit 38.5-50% / 35-45%; WBC 3.8-10.8 x10^3/uL). No in-flight samples. File list (OSDR API, checked 14 Nov 2026): LSDS-7_Complete_Blood_Count_CBC.upload_SUBMITTED.csv and LSDS-7_Complete_Blood_Count_CBC_TRANSFORMED.csv.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_OSD575",
+      "title": "NASA OSDR OSD-575 — SpaceX Inspiration4 Blood Serum Metabolic Panel and Immune/Cardiac Cytokine Arrays",
+      "publisher": "NASA OSDR",
+      "url": "https://osdr.nasa.gov/bio/repo/data/studies/OSD-575",
+      "says": "Inspiration4 (3-day LEO mission, Sept 2021, four private astronauts): serum collected pre-flight (L-92, L-44, L-3) and post-flight (R+1, R+45, R+82); comprehensive metabolic panel by Quest Diagnostics plus cytokine panels (Eve Technologies, Alamar). The CMP file (LSDS-8_Comprehensive_Metabolic_Panel_CMP.upload_SUBMITTED.csv) has a glucose row per sample with lab reference range (e.g. 65-99 mg/dL). The study metadata does not record fasting state. Checked 14 Nov 2026 (OSDR API metadata and file).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EARTH_VITALS_GENERAL",
+      "title": "General adult vital-sign reference ranges (HR 60-100, SpO2 >=95%, temperature)",
+      "publisher": "MedlinePlus (U.S. National Library of Medicine)",
+      "url": "https://medlineplus.gov/ency/article/002341.htm",
+      "says": "MedlinePlus 'Vital signs' (url): adult resting pulse 60 to 100 beats per minute; temperature 97.7-99.1 F (36.5-37.3 C), average 98.6 F (37 C). MedlinePlus 'Pulse oximetry' (https://medlineplus.gov/lab-tests/pulse-oximetry/): normal oxygen saturation 95% to 100%; readings may be 2% to 4% off. Both checked 14 Nov 2026. ARGUS's own band edges (50-100 bpm nominal; the 90% SpO2 edge; 36.1-37.4 C nominal and the 35.0/37.5/38.0 C edges) are not stated on these pages; they are ARGUS demo band edges and cite SRC_DEMO_RULE_BANDS.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EARTH_BP_ACC_AHA",
+      "title": "Blood pressure categories (2017 ACC/AHA guideline, AHA patient page)",
+      "publisher": "American Heart Association",
+      "url": "https://www.heart.org/BPlevels",
+      "says": "Normal <120 and <80; elevated 120-129 and <80; stage 1 130-139 or 80-89; stage 2 >=140 or >=90; severe/crisis higher than 180 and/or higher than 120. Checked 14 Nov 2026.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EARTH_GLUCOSE_ADA",
+      "title": "ADA Standards of Care — glucose categories",
+      "publisher": "American Diabetes Association",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8865785",
+      "says": "Fasting plasma glucose 100-125 mg/dL prediabetes range; >=126 diabetes range; random >=200 with classic symptoms; 140-199 is the 2-hour tolerance-test range (not a random-sample category). Checked 14 Nov 2026. Hypoglycemia levels (<70, <54) not re-checked.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EARTH_SLEEP_7H",
+      "title": "Watson NF et al. Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the AASM and SRS. Sleep 2015",
+      "publisher": "Sleep (via PubMed Central)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4434546/",
+      "says": "Adults should sleep 7 or more hours per night on a regular basis to promote optimal health (adults aged 18 to 60). Checked 14 Nov 2026.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_EARTH_ACUITY",
+      "title": "Near acuity screening reference (20/40 ~ logMAR 0.3)",
+      "publisher": "Wikipedia (LogMAR chart); University of Iowa EyeRounds",
+      "url": "https://en.wikipedia.org/wiki/LogMAR_chart",
+      "says": "Equivalence confirmed: 20/40 (6/12) = 0.30 logMAR (Wikipedia 'LogMAR chart' table; also log10(40/20) = 0.301). 20/40 is used in US driver-licensing standards for distance acuity (EyeRounds 'Uniform vision standards for driving', https://eyerounds.org/article/uniform_vision_standards_for_driving.htm, checked 14 Nov 2026). No source opened states 20/40 as a NEAR-acuity screening cut-off, so ARGUS's 0.3 logMAR Earth line stays a demo choice. Stays partial.",
+      "status": "partial",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_IPD_DODGSON",
+      "title": "Dodgson NA. Variation and extrema of human interpupillary distance. Proc. SPIE 5291, Stereoscopic Displays and Virtual Reality Systems XI, 36-46 (2004)",
+      "publisher": "SPIE",
+      "url": "https://doi.org/10.1117/12.529999",
+      "says": "Abstract: mean adult IPD is around 63 mm; the vast majority of adults lie in 50-75 mm; 45-80 mm includes almost all adults. Bibliographic data checked via Crossref and abstract read via the Semantic Scholar/OpenAlex records of this DOI, 14 Nov 2026 (the SPIE page blocks automated access). Used only to estimate viewing distance.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_ALAVI_2022",
+      "title": "Alavi A et al. Real-time alerting system for COVID-19 and other stress events using wearable data. Nature Medicine 2022",
+      "publisher": "Nature Medicine",
+      "url": "https://www.nature.com/articles/s41591-021-01593-2",
+      "says": "Online detectors (NightSignal, RHRAD, CuSum) compare resting HR to personal baseline (streaming median) with an alerting state machine.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_MISHRA_2020",
+      "title": "Mishra T et al. Pre-symptomatic detection of COVID-19 from smartwatch data. Nature Biomedical Engineering 2020",
+      "publisher": "Nature Biomedical Engineering",
+      "url": "https://doi.org/10.1038/s41551-020-00640-6",
+      "says": "Elevations in resting heart rate relative to the individual baseline detected 63% of cases before symptoms with a two-tier warning system.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_PSU_AI",
+      "title": "When 911 is millions of miles away: PSU researcher builds AI guardian for Mars missions",
+      "publisher": "Portland State University",
+      "url": "https://www.pdx.edu/engineering/news/when-911-millions-miles-away-psu-researcher-builds-ai-guardian-mars-missions",
+      "says": "NASA-funded AI health display learns each astronaut's physiology and updates the baseline during the mission.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_POS_WANG2017",
+      "title": "Wang W, den Brinker AC, Stuijk S, de Haan G. Algorithmic principles of remote PPG. IEEE TBME 64(7):1479-1491, 2017",
+      "publisher": "IEEE",
+      "url": "https://doi.org/10.1109/TBME.2016.2609282",
+      "says": "Introduces the POS (plane-orthogonal-to-skin) rPPG algorithm.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_RPPG_KOSSACK",
+      "title": "Kossack et al. Automatic region-based heart rate measurement using rPPG (ICCV Workshops 2021)",
+      "publisher": "CVF",
+      "url": "https://openaccess.thecvf.com/content/ICCV2021W/V4V/papers/Kossack_Automatic_Region-Based_Heart_Rate_Measurement_Using_Remote_Photoplethysmography_ICCVW_2021_paper.pdf",
+      "says": "POS applied per facial ROI; POS reported best among traditional methods under varying lighting.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_MEDIAPIPE_FACE",
+      "title": "MediaPipe Face Landmarker — Web guide",
+      "publisher": "Google",
+      "url": "https://developers.google.com/edge/mediapipe/solutions/vision/face_landmarker/web_js",
+      "says": "Browser face landmark detection: 478 3D landmarks, 52 blendshapes, transformation matrix; VIDEO running mode; npm @mediapipe/tasks-vision.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_NOAA_SWPC_PROTONS",
+      "title": "NOAA SWPC GOES proton flux products and JSON",
+      "publisher": "NOAA SWPC",
+      "url": "https://www.swpc.noaa.gov/products/goes-proton-flux",
+      "says": "5-minute integral proton flux; S-scale thresholds 10/100/1,000/10,000/100,000 pfu at >=10 MeV; >=100 MeV alert at 1 pfu; JSON at services.swpc.noaa.gov/json/goes/.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DONKI",
+      "title": "NASA DONKI SEP web service",
+      "publisher": "NASA CCMC",
+      "url": "https://ccmc.gsfc.nasa.gov/tools/DONKI",
+      "says": "Space weather event catalog incl. Solar Energetic Particle events; web service endpoints with startDate/endDate (default last 30 days).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_NOAA_SPE_LIST",
+      "title": "NOAA list of Solar Proton Events affecting the Earth environment",
+      "publisher": "NOAA",
+      "url": null,
+      "says": "Not needed for the build any more: when no event was captured, the replay uses the synthetic profile of doc 10 section 8 (SRC_DEMO_RADIATION_MODEL). NOAA states that it compiles such a list; its current URL was not located. Re-checked 14 Nov 2026: no code, seed file or handbook page cites this id, so nothing on screen rests on it.",
+      "status": "partial",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_ISS_DOSE",
+      "title": "ISS dose-equivalent rate reported alongside the lunar-surface measurement (Zhang et al. 2020)",
+      "publisher": "Science Advances (as reported by Sci.News)",
+      "url": "https://www.sci.news/space/radiation-dose-rates-lunar-surface-08893.html",
+      "says": "For the same period as the Chang'E-4 measurement, the dose equivalent on board the ISS was 731 uSv/day (523 from galactic cosmic rays, 208 from the South Atlantic Anomaly). ARGUS uses 0.7 mSv/day. Checked 14 Nov 2026 (secondary report of the paper).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_OSDR_RADLAB",
+      "title": "NASA OSDR RadLab",
+      "publisher": "NASA OSDR",
+      "url": "https://visualization.osdr.nasa.gov/radlab/",
+      "says": "Single point of access to radiation telemetry data from multiple databases maintained by multiple space agencies: ISS (LEO) and beyond-LEO instruments, time series and absorbed-dose-rate maps. Checked 14 Nov 2026 (the page names no specific partner agency). Cited as the data portal for ISS dosimetry; the 0.7 mSv/day figure itself comes from SRC_ISS_DOSE.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_RAD_CURIOSITY",
+      "title": "Zeitlin C et al. Measurements of energetic particle radiation in transit to Mars on the Mars Science Laboratory. Science 2013",
+      "publisher": "Science (value as reported by NASA JPL)",
+      "url": "https://www.jpl.nasa.gov/news/data-from-nasa-rovers-voyage-to-mars-aids-planning/",
+      "says": "RAD measured an average of about 1.8 mSv/day (1.84 in the paper) of GCR dose equivalent inside the MSL spacecraft during the cruise to Mars. Checked 14 Nov 2026 (NASA JPL release).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_RAD_CHANGE4",
+      "title": "Zhang S et al. First measurements of the radiation dose on the lunar surface. Science Advances 2020",
+      "publisher": "Science Advances",
+      "url": "https://doi.org/10.1126/sciadv.aaz1334",
+      "says": "Average dose equivalent of 1,369 uSv/day (about 1.37 mSv/day) on the lunar surface (Chang'E-4 LND). Checked 14 Nov 2026 (paper front page and press summaries).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_RAD_MARS_SURFACE",
+      "title": "Hassler DM et al. Mars' surface radiation environment measured with the MSL Curiosity rover. Science 2014",
+      "publisher": "Science (value as quoted in J. Space Weather Space Clim. 2016)",
+      "url": "https://www.swsc-journal.org/articles/swsc/full_html/2016/01/swsc150074/F11.html",
+      "says": "Average GCR dose equivalent rate of 0.64 +/- 0.12 mSv/day on the Martian surface (MSL RAD). Checked 14 Nov 2026 (quoted value).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_HRA_3D",
+      "title": "HRA 3D Reference Library (HuBMAP) / NIH 3D Body, Male & Female",
+      "publisher": "HuBMAP / NIH 3D",
+      "url": "https://humanatlas.io/3d-reference-library",
+      "says": "Visible Human male/female united body sets and organs as GLB, CC BY 4.0 (NIH 3D entries 3DPX-021022 male, 3DPX-021627 female).",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_BODYPARTS3D",
+      "title": "BodyParts3D, The Database Center for Life Science",
+      "publisher": "DBCLS",
+      "url": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html",
+      "says": "Licensed under CC BY 4.0 since 2025-02-27 (license page checked 14 Nov 2026). Required credit: \"BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution 4.0 International\". Older releases and OBJ file comments still mention CC BY-SA 2.1 Japan.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_SPACEAPPS_GUIDE",
+      "title": "NASA Space Apps Project Submission Guide",
+      "publisher": "NASA Space Apps",
+      "url": "https://www.spaceappschallenge.org/resources/project-submission-guide/",
+      "says": "Demo: video <=30 s or <=7 slides, English, public link; NASA data required for global awards; criteria: Impact, Creativity, Validity, Relevance, Presentation. Note 14 Nov 2026: when re-opened, this page still showed last year's dates; the 2026 dates (submission opens Sat 14 Nov 09:00, closes Sun 15 Nov 23:59 local time) are on https://www.spaceappschallenge.org/2026/. Re-read the 2026 guide (released 13 Nov) before submitting.",
+      "status": "verified",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DEMO_RULE_BANDS",
+      "title": "ARGUS demo parameters: rule band edges",
+      "publisher": "ARGUS team",
+      "url": null,
+      "says": "Band edges marked [demo] in docs/07_CLINICAL_RULES.md are our own choices for this prototype; they are not clinical or NASA limits.",
+      "status": "demo",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DEMO_BASELINE_ENGINE",
+      "title": "ARGUS demo parameters: personal baseline engine",
+      "publisher": "ARGUS team",
+      "url": null,
+      "says": "CuSum k = 0.5, thresholds z 2.0/3.0 and S 4.0/8.0, drift 2.5, hysteresis 1.5, recovery reset, sigma floors and the -0.9 h expected sleep shift (docs/08_BASELINE_ENGINE.md) are tuning choices for this prototype.",
+      "status": "demo",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DEMO_RADIATION_MODEL",
+      "title": "ARGUS demo parameters: radiation model and shelter policy",
+      "publisher": "ARGUS team",
+      "url": null,
+      "says": "K = 0.05 mSv/h per pfu, shield factors, dose verdict thresholds (80 %, 95 %, 125 mSv), the shelter policy table and the synthetic S2 replay profile (docs/10_RADIATION.md) are illustrative; real crew dose comes from dosimeters and real shelter calls from radiation specialists.",
+      "status": "demo",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DEMO_QUALITY_SCORES",
+      "title": "ARGUS demo parameters: measurement quality and staleness",
+      "publisher": "ARGUS team",
+      "url": null,
+      "says": "rPPG quality thresholds, staleness multipliers (1.5x and 3x cadence), assumed webcam field of view and similar measurement settings (docs/09_MEASUREMENT_LAB.md, docs/04_REQUIREMENTS.md) are our own choices.",
+      "status": "demo",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DEMO_READINESS",
+      "title": "ARGUS demo parameters: readiness index and gamification",
+      "publisher": "ARGUS team",
+      "url": null,
+      "says": "The readiness formula, points, streaks and badges (docs/11_UI_UX_SPEC.md section 9) are a demo index, not an Integrated Medical Model output.",
+      "status": "demo",
+      "accessed": "2026-11-14"
+    },
+    {
+      "id": "SRC_DEMO_SIMULATION",
+      "title": "ARGUS demo parameters: simulated crew, scenarios and mission profile assumptions",
+      "publisher": "ARGUS team",
+      "url": null,
+      "says": "Crew baselines, noise, scenarios, pre-mission career doses and the Mars-transit delay table (seed/crew.json, seed/scenarios.json, seed/missions.json) are simulated or assumed and are labeled as such.",
+      "status": "demo",
+      "accessed": "2026-11-14"
+    }
+  ]
+}

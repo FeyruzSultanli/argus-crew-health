@@ -1,0 +1,80 @@
+{
+  "_note": "Mission profiles. Values link to seed/sources.json. 'partial' sources must be re-checked. Light-time delays are computed (distance / c).",
+  "profiles": [
+    {
+      "id": "iss",
+      "label": "International Space Station (LEO)",
+      "gravityG": 0,
+      "commsDelayOneWaySec": 1,
+      "gcrDoseMsvPerDay": 0.7,
+      "resupply": "regular",
+      "durationDays": 180,
+      "demoMissionDay": 90,
+      "shelterPolicyClass": "leo",
+      "sourceIds": ["SRC_ISS_DOSE"]
+    },
+    {
+      "id": "lunar-transit",
+      "label": "Lunar transit (Orion-class spacecraft)",
+      "gravityG": 0,
+      "commsDelayOneWaySec": 1.3,
+      "gcrDoseMsvPerDay": 1.8,
+      "resupply": "none",
+      "durationDays": 10,
+      "demoMissionDay": 6,
+      "shelterPolicyClass": "deep-space",
+      "sourceIds": ["SRC_RAD_CURIOSITY", "SRC_OCHMO_OVERVIEW"]
+    },
+    {
+      "id": "lunar-surface",
+      "label": "Lunar surface base",
+      "gravityG": 0.165,
+      "commsDelayOneWaySec": 1.3,
+      "gcrDoseMsvPerDay": 1.37,
+      "resupply": "none",
+      "durationDays": 60,
+      "demoMissionDay": 30,
+      "shelterPolicyClass": "deep-space",
+      "sourceIds": ["SRC_RAD_CHANGE4", "SRC_OCHMO_OVERVIEW"]
+    },
+    {
+      "id": "lunar-rover",
+      "label": "Pressurized rover (lunar surface)",
+      "gravityG": 0.165,
+      "commsDelayOneWaySec": 1.3,
+      "gcrDoseMsvPerDay": 1.37,
+      "resupply": "none",
+      "durationDays": 14,
+      "demoMissionDay": 7,
+      "shelterPolicyClass": "deep-space",
+      "notes": "Rover shielding not modeled; uses lunar surface rate.",
+      "sourceIds": ["SRC_RAD_CHANGE4"]
+    },
+    {
+      "id": "mars-transit",
+      "label": "Mars transit",
+      "gravityG": 0,
+      "commsDelayOneWaySec": { "byMissionDay": [[1, 1], [60, 120], [120, 420], [143, 660], [210, 1000]] },
+      "commsDelayNote": "Modeled growth of light-time during transit (demo parameter); day 143 = 11 min.",
+      "gcrDoseMsvPerDay": 1.8,
+      "resupply": "none",
+      "durationDays": 210,
+      "demoMissionDay": 143,
+      "shelterPolicyClass": "deep-space",
+      "sourceIds": ["SRC_RAD_CURIOSITY", "SRC_OCHMO_OVERVIEW"]
+    },
+    {
+      "id": "mars-surface",
+      "label": "Mars surface base",
+      "gravityG": 0.38,
+      "commsDelayOneWaySec": 720,
+      "commsDelayNote": "Real range about 3-22 min by planetary geometry; fixed 12 min in the demo.",
+      "gcrDoseMsvPerDay": 0.64,
+      "resupply": "none",
+      "durationDays": 500,
+      "demoMissionDay": 200,
+      "shelterPolicyClass": "mars-surface",
+      "sourceIds": ["SRC_RAD_MARS_SURFACE", "SRC_NASA_HAZARDS"]
+    }
+  ]
+}

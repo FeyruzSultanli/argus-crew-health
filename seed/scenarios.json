@@ -1,0 +1,66 @@
+{
+  "_note": "Deterministic demo scenarios applied by src/services/sim/scenarios.ts on top of baseline simulation (seed 'argus-2026'). All effects are SIMULATED and labeled as such.",
+  "scenarios": [
+    {
+      "id": "silent-infection",
+      "label": "Silent infection (caught only by personal baseline)",
+      "crewIds": ["c3"],
+      "days": [141, 142, 143],
+      "effects": {
+        "heart_rate_rest": { "absolute": [63, 68, 69], "noise": false },
+        "body_temp": { "deltaC": [0.3, 0.5, 0.6] },
+        "mood": { "delta": [0, -1, -1] }
+      },
+      "demonstrates": "Values stay inside Earth and space ranges; personal layer escalates WATCH → WATCH → ACT (doc 08 TV-8)."
+    },
+    {
+      "id": "co2-spike",
+      "label": "CO2 pocket near sleep stations",
+      "crewIds": ["cabin", "c1", "c2", "c3", "c4"],
+      "days": [118, 119, 120, 121, 122],
+      "effects": {
+        "cabin_co2": { "absoluteMmHg": [3.4, 3.8, 4.2, 3.9, 3.5] },
+        "symptoms": { "add": ["headache"], "crewIds": ["c2", "c4"] }
+      },
+      "demonstrates": "Earth workplace limit (3.8 mmHg) passes some days while NASA-STD-3001 (3 mmHg) flags all days: missed by Earth."
+    },
+    {
+      "id": "sleep-debt",
+      "label": "Sleep debt before a critical operation",
+      "crewIds": ["c2"],
+      "days": [130, 131, 132, 133, 134, 135, 136],
+      "effects": {
+        "sleep_duration": { "absoluteHours": [5.6, 5.4, 5.2, 5.5, 5.3, 5.6, 5.4] },
+        "reaction_test": { "lapsesDelta": 4, "onDays": [133, 136] }
+      },
+      "demonstrates": "Typical 6-7 h in-flight sleep is EXPECTED; this drop is a real concern (WATCH/ACT) confirmed by reaction test."
+    },
+    {
+      "id": "sans-drift",
+      "label": "Vision change (SANS surveillance)",
+      "crewIds": ["c1"],
+      "days": [90],
+      "effects": {
+        "amsler": { "eye": "right", "newPeripheralCells": 2 },
+        "near_acuity": { "eye": "right", "deltaLogMAR": 0.1 }
+      },
+      "demonstrates": "Amsler diff vs previous map triggers WATCH and a vision protocol; small acuity change is EXPECTED with anticipation glasses."
+    },
+    {
+      "id": "spe-event",
+      "label": "Solar particle event (replay)",
+      "crewIds": ["c1", "c2", "c3", "c4"],
+      "days": [143],
+      "effects": { "radiation": { "replay": "seed/radiation/spe-replay.json", "speed": 600 } },
+      "demonstrates": "Radiation pillar with a synthetic replay (not a recorded event): S-scale rise, shelter advisory, modeled SPE dose, dose ledger update."
+    },
+    {
+      "id": "normal-adaptation",
+      "label": "Normal spaceflight adaptation",
+      "crewIds": ["c1", "c2", "c3", "c4"],
+      "days": "all-inflight",
+      "effects": { "sleep_duration": { "offsetFromPreflightHours": -0.9, "sdHours": 0.35 } },
+      "demonstrates": "EXPECTED state: Earth flags short sleep; space layer explains it as a known in-flight pattern."
+    }
+  ]
+}

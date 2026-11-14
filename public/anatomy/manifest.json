@@ -1,0 +1,120 @@
+{
+  "build": "2026-11-14T14:31:27.588Z",
+  "triangles": {
+    "male": 138419,
+    "female": 138975
+  },
+  "nodes": {
+    "male": [
+      "skin",
+      "brain",
+      "eye_l",
+      "eye_r",
+      "heart",
+      "lung_l",
+      "lung_r",
+      "aorta",
+      "liver",
+      "pancreas",
+      "kidney_l",
+      "kidney_r",
+      "bladder",
+      "spine",
+      "pelvis",
+      "femur_l",
+      "femur_r"
+    ],
+    "female": [
+      "skin",
+      "brain",
+      "eye_l",
+      "eye_r",
+      "heart",
+      "lung_l",
+      "lung_r",
+      "aorta",
+      "liver",
+      "pancreas",
+      "kidney_l",
+      "kidney_r",
+      "bladder",
+      "spine",
+      "pelvis",
+      "femur_l",
+      "femur_r"
+    ]
+  },
+  "bodies": {
+    "male": {
+      "file": "male.glb",
+      "bytes": 911192,
+      "triangles": 138419,
+      "heightM": 1.824,
+      "nodes": [
+        "skin",
+        "brain",
+        "eye_l",
+        "eye_r",
+        "heart",
+        "lung_l",
+        "lung_r",
+        "aorta",
+        "liver",
+        "pancreas",
+        "kidney_l",
+        "kidney_r",
+        "bladder",
+        "spine",
+        "pelvis",
+        "femur_l",
+        "femur_r"
+      ],
+      "missing": [],
+      "source": {
+        "url": "https://cdn.humanatlas.io/digital-objects/ref-organ/united-male/v1.10/assets/3d-vh-m-united.glb",
+        "doi": "https://doi.org/10.48539/HBM833.WZWN.425",
+        "title": "3D Reference Organ Set for Male, v1.10"
+      }
+    },
+    "female": {
+      "file": "female.glb",
+      "bytes": 915700,
+      "triangles": 138975,
+      "heightM": 1.658,
+      "nodes": [
+        "skin",
+        "brain",
+        "eye_l",
+        "eye_r",
+        "heart",
+        "lung_l",
+        "lung_r",
+        "aorta",
+        "liver",
+        "pancreas",
+        "kidney_l",
+        "kidney_r",
+        "bladder",
+        "spine",
+        "pelvis",
+        "femur_l",
+        "femur_r"
+      ],
+      "missing": [],
+      "source": {
+        "url": "https://cdn.humanatlas.io/digital-objects/ref-organ/united-female/v1.10/assets/3d-vh-f-united.glb",
+        "doi": "https://doi.org/10.48539/HBM637.DWBM.744",
+        "title": "3D Reference Organ Set for Female, v1.10"
+      }
+    }
+  },
+  "attribution": [
+    "HRA 3D Reference Organs (Visible Human male and female united bodies, v1.10), HuBMAP — CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Browne, Kristen, and Heidi Schlehlein. 2026. 3D Reference Organ Set for Male, v1.10. https://doi.org/10.48539/HBM833.WZWN.425; 3D Reference Organ Set for Female, v1.10. https://doi.org/10.48539/HBM637.DWBM.744.",
+    "Source data: Visible Human Project, U.S. National Library of Medicine.",
+    "Modified for ARGUS: selected organs only, merged per organ, simplified, re-centred and compressed (scripts/build-anatomy.ts)."
+  ],
+  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+  "sourceIds": [
+    "SRC_HRA_3D"
+  ]
+}
