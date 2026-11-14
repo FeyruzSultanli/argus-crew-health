@@ -63,4 +63,4 @@ From their README "What it would take to be real":
 - [ ] Every number on screen has a source badge.
 - [ ] FHIR export produces valid JSON.
 - [ ] Works offline after first load (airplane-mode test).
-- [ ] 30-s video and 7-slide deck exist and are public.
+- [ ] The 7-slide deck exists and is public.

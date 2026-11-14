@@ -13,7 +13,7 @@ const DIR = join(ROOT, 'docs', 'submission', 'slides');
 const SLIDES = 7;
 
 const config = JSON.parse(readFileSync(join(DIR, 'deck.config.json'), 'utf8'));
-for (const k of ['teamName', 'members', 'videoUrl', 'liveUrl', 'repoUrl'])
+for (const k of ['teamName', 'members', 'liveUrl', 'repoUrl'])
   if (typeof config[k] !== 'string') throw new Error(`deck.config.json: "${k}" must be a string`);
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -27,7 +27,6 @@ const fill = (key, value) => {
 const values = {
   teamName: fill('teamName', config.teamName),
   members: fill('members', config.members),
-  videoUrl: fill('videoUrl', config.videoUrl),
   liveUrl: fill('liveUrl', config.liveUrl),
   liveUrlShort: fill('liveUrl', short(config.liveUrl)),
   repoUrlShort: fill('repoUrl', short(config.repoUrl)),

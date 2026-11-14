@@ -1,6 +1,6 @@
 # Slides
 
-1. Edit `deck.config.json` (team, members, video URL, live URL, repo URL); wording lives in `slides.template.html`.
+1. Edit `deck.config.json` (team, members, live URL, repo URL); wording lives in `slides.template.html`.
 2. Run `npm run slides:build` → `slides.html`, `ARGUS-slides.pdf` (7 pages, 1920×1080) and `slide-1.png` … `slide-7.png`; it warns about any `<<…>>` left (shown with a dashed outline) and any text overflow.
 3. Submit the PDF (a public link to it is enough). Google Slides: File → Import slides does not take PDF, so insert `slide-N.png` as full-slide images (or upload the PDF to Drive and share it); PowerPoint: Insert → Pictures → `slide-N.png` per slide, or open the PDF in Acrobat → Export → PowerPoint.
 

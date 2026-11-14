@@ -1,4 +1,4 @@
-// Shared helpers for the submission-asset scripts (screenshots, video). Plain Node ESM + Playwright; no app code.
+// Shared helpers for the submission-asset scripts (screenshots). Plain Node ESM + Playwright; no app code.
 // The app must already be served, e.g. `npm run build && npx vite preview --port 5175 --strictPort`.
 import { chromium, expect } from '@playwright/test';
 

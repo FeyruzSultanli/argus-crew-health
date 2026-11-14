@@ -77,7 +77,7 @@ The headline metric on screen: **"caught only by personal baseline"** — concer
   can run on a vehicle computer, a tablet, or a ground console.
 - Flight-surgeon packet: compact, delay-aware report with provenance of every value.
 
-## 5. The demo story (drives the 30-second video and the live demo)
+## 5. The demo story (drives the live demo)
 
 > **Mars transit, mission day 143. Comms delay: 11 minutes.**
 > 1. A solar particle event replay (a recorded NOAA GOES event if one was captured, otherwise the labeled synthetic
@@ -102,7 +102,7 @@ Space Apps judges on **Impact, Creativity, Validity, Relevance, Presentation**.
 | Creativity | Novel approach | Three-layer verdict with "caught only by personal baseline"; webcam vitals; live space weather → dose ledger |
 | Validity | Scientifically sound, works in reality | Every number sourced and status-labeled; published algorithms (POS rPPG, PVT-B, CuSum baselines); honest limits page |
 | Relevance | Responsive to the challenge, complete, usable | Covers every challenge item: indicators, assessment, guidance, body figure, charts, colour coding, gamification, prompts, multiple environments, instructions |
-| Presentation | Clear demo | Scripted 30-s video, 7-slide deck, live PWA link, polished UI |
+| Presentation | Clear demo | 7-slide deck, live PWA link, polished UI |
 
 Challenge-text coverage checklist (must all be visibly demonstrable):
 - [ ] gathers health indicators (BP, HR, blood sugar mg/dL, temperature, sleep hours, mood) — Lab + check-in

@@ -13,7 +13,7 @@ Re-take all: `node scripts/submission/screenshots.mjs` (or one group: `… scree
 |------|-----------------|-----|
 | `01-sign-in.png` | `/sign-in`, role CMO selected, PIN typed | README; demo walkthrough |
 | `02-bridge-cmo-md143.png` | `/` as CMO, MD 143: K. Osei Act + "Caught only by personal baseline", counters (Caught only by personal: 2) | Slide 7 (small Bridge); README |
-| `03-body-c3-lens-earth.png` | `/body/c3`, heart clicked (camera on the chest, Resting heart rate card open), lens **Earth**: heart Nominal | Slide 3 inset; video reference |
+| `03-body-c3-lens-earth.png` | `/body/c3`, heart clicked (camera on the chest, Resting heart rate card open), lens **Earth**: heart Nominal | Slide 3 inset |
 | `04-body-c3-lens-space.png` | same framing, lens **Space**: heart Nominal | Lens sequence |
 | `05-body-c3-lens-personal.png` | same framing, lens **Personal**: heart **Act**; card shows P Act · S Nominal · E Nominal and "Caught only by personal baseline" | Slide 3 (main); project page pillar A; README |
 | `06-body-c3-lens-combined.png` | same framing, lens **Combined**: heart Act | Slide 1 visual |
@@ -22,7 +22,7 @@ Re-take all: `node scripts/submission/screenshots.mjs` (or one group: `… scree
 | `08-trends-c3-heart-rate-act.png` | `/trends/c3`: resting-HR excursion with the ACT marker at MD 143, personal and pre-flight bands | Project page; README |
 | `09-lab-hub.png` | `/lab`, K. Osei selected (Vision check and Face fluid-shift scan tiles live, "Experimental — not validated" on the face tile, only Device import left as "Coming next") | Slide 4 context; project page pillar B |
 | `10-camera-pulse-privacy.png` | `/lab/camera` step 1 (explainer) with the privacy line "Video stays on this device. Only the number is saved." | Slide 4; project page pillar B (until a real camera result exists) |
-| `11-camera-pulse-how-to.png` | `/lab/camera` step 2 "How to measure" | Slide 4 alt; video no-camera cut |
+| `11-camera-pulse-how-to.png` | `/lab/camera` step 2 "How to measure" | Slide 4 alt |
 | `12-reaction-test-result-test-mode.png` | `/lab/pvt?pvtTest=1&pvtProfile=slow` → Start → Result (not saved), "TEST MODE — scripted responses (slow)" badge | Slide 4 |
 | `13-environment-before-replay.png` | `/environment?replaySpeed=3600` before the replay: data mode **LIVE** (real NOAA fetch, "fetched just now"), S0 | Slide 5 inset |
 | `14-environment-replay-s2.png` | same, Replay SPE running, held at **S2**: "Shelter advised." banner (DEMO POLICY), REPLAY + "synthetic S2-class profile (demo), not a recorded event" on banner, S tile and flux chart; "Modeled — illustrative" at the bottom | Slide 5 (main); project page pillar C |

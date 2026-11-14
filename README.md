@@ -4,7 +4,7 @@
 
 **Team:** Dark Star · İsmail Cem Şahin, Feyruz Sultanli, Fikret Mammadov, Rahil Bagirov
 **Live demo:** https://feyruzsultanli.github.io/argus-crew-health/ (demo PIN **2026**) ·
-**30-s video:** <<VIDEO URL>> · **Slides (7):** [ARGUS-slides.pdf](docs/submission/slides/ARGUS-slides.pdf)
+**Slides (7):** [ARGUS-slides.pdf](docs/submission/slides/ARGUS-slides.pdf)
 
 > **Read this first.** ARGUS is a hackathon prototype, not a medical device: it never diagnoses or gives drug doses.
 > The four crew members and their day-by-day readings are simulated. The NOAA space-weather data and your own camera,
@@ -118,9 +118,3 @@ deploys `dist/` to https://feyruzsultanli.github.io/argus-crew-health/.
 - Third-party assets and licenses: `CREDITS.md` (HRA 3D Reference Organs — HuBMAP/NIH, CC BY 4.0; MediaPipe —
   Apache-2.0; IBM Plex — OFL; Lucide — ISC; NASA OSDR and NOAA SWPC public data).
 - No NASA logos, flags or insignia are used; the ARGUS mark is our own.
-
-## Submission material
-
-`docs/submission/`: project page text, 30-second video script, seven-slide outline, live demo script with judge Q&A,
-challenge coverage table. Built from them: the deck [`slides/ARGUS-slides.pdf`](docs/submission/slides/ARGUS-slides.pdf)
-(`npm run slides:build`), the screenshots and the video drafts in `docs/submission/video/`.

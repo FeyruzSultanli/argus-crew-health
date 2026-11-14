@@ -191,8 +191,8 @@ Three-column layout (like the benchmark, improved):
 
 ## 8. Accessibility checklist
 Keyboard navigation for all flows (PVT uses Space; scrubber arrows; protocol Space/Enter); focus rings `--brand`;
-ARIA live region for alerts and countdowns; charts have table alternatives ("View data"); captions on the demo
-video; contrast AA verified with axe in Playwright.
+ARIA live region for alerts and countdowns; charts have table alternatives ("View data");
+contrast AA verified with axe in Playwright.
 
 ## 9. Gamification (operational, not childish)
 - Points per completed task (measure 10, exam 25, check-in 5); weekly crew total on Bridge.

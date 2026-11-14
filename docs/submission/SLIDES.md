@@ -155,16 +155,24 @@ link. The honesty table is in the app itself, on the Limits page.
 **Lines:**
 - Impact: Earth-independent crew care; the same personal-baseline approach for remote and rural care on Earth
   <!-- SRC_CSA_WHY_SCIENCE -->
-- Covers the challenge: indicators, camera and keyboard input, verdict and guidance, clickable body, charts,
-  colour coding, gamification, measurement prompts, six mission environments (see CHALLENGE_COVERAGE.md)
-- Next: paired camera-pulse validation, a ruler check of the vision calibration, face-scan trials, device adapters
-  (Bio-Monitor, ARCHeR style), clinical review of demo thresholds, encryption at rest
-- Try it: feyruzsultanli.github.io/argus-crew-health (PIN 2026) · video <<VIDEO URL>>
+- **New:** most entries we reviewed check readings against fixed thresholds; ARGUS asks "is this unusual for this
+  astronaut?" and shows which layer raised the flag
+  <!-- docs/03_COMPETITIVE_ANALYSIS.md §1.2 and §3: public repositories for this challenge, snapshot of 14 Nov 2026 -->
+- **Also:** measures with on-board hardware · radiation tied to each crew member's dose ledger · every number
+  sourced or labeled demo · offline and FHIR-ready for the delay
+- Covers the challenge: indicators, camera and keyboard input, guidance, clickable body, charts, colour coding,
+  gamification, prompts, six environments (full table: CHALLENGE_COVERAGE.md)
+- Next: camera-pulse validation against a reference device, clinical review of demo thresholds, device adapters,
+  encryption at rest (also open: a ruler check of the vision calibration and face-scan trials, see slide 4)
+- Try it: scan the QR code (PIN 2026)
 
 **Visual:** QR code of `https://feyruzsultanli.github.io/argus-crew-health/` (generate it in the slide tool or any
 offline QR generator; no third-party logo inside the QR) next to a small Bridge screenshot (`/` as CMO: Crew at a
 glance with K. Osei Act and the "Caught only by personal baseline" counter).
 
-**Speaker notes:** ARGUS shows that a crew can see who needs attention, why, and what to do, with hardware already on
-board. What it needs next is validation against reference devices and a clinical review. Scan the code to try it; the
-demo PIN is 2026.
+**Speaker notes:** Most entries check readings against fixed thresholds. ARGUS asks a better question: is this unusual for
+this astronaut, in this environment, and can we trust the measurement? And it measures with hardware already on
+board. Do not claim it is clinically more accurate: the crew data is simulated, some thresholds are demo parameters,
+the camera pulse has not been compared with a reference device and the face scan is experimental. The claim is a
+better question and honest labels, not a better diagnosis. What it needs next is validation against reference
+devices and a clinical review. Scan the code to try it; the demo PIN is 2026.

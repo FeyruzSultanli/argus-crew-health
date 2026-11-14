@@ -110,7 +110,7 @@ Copy always ends with: "Real shelter calls come from the mission's radiation spe
 
 ## 8. Replay mode (FR-RAD-4)
 
-Goal: show a real solar particle event in the 30-s video even if the sun is quiet on demo day.
+Goal: show a solar particle event in the demo even if the sun is quiet on demo day.
 1. `scripts/fetch-data.ts` saves today's 7-day GOES file. If it contains an event (≥10 MeV ≥ 10 pfu), save that
    window as `seed/radiation/spe-replay.json` with source "NOAA SWPC GOES, captured <date>".
 2. Otherwise (the usual case when the Sun is quiet) write the **synthetic S2 profile** below to the same file with
@@ -119,7 +119,7 @@ Goal: show a real solar particle event in the 30-s video even if the sun is quie
    5-minute samples over 36 h. ≥10 MeV: background 0.2 pfu; from t = 0.5 h an exponential rise to a peak of 150 pfu
    at t = 3 h; then exponential decay with an e-folding time of 10 h. ≥100 MeV: background 0.15 pfu; same timing;
    peak 0.8 pfu (it stays under the 1-pfu alert, so the advisory reads "Shelter advised", as in the demo story).
-   Never call this profile "real" or "live" in the UI, the video or the slides; LIVE belongs only to the current
+   Never call this profile "real" or "live" in the UI or the slides; LIVE belongs only to the current
    NOAA feed.
 3. Replay speeds 60× / 600× / 3600× from the demo controls, default **600×** (10 h of event per minute; S2 is
    reached about 20 s after pressing play, about 3 s at 3600×). S-scale, shelter advisory and modeled SPE dose

@@ -28,9 +28,7 @@
     "fetch:data": "tsx scripts/fetch-data.ts",
     "check:sources": "tsx scripts/check-sources.ts",
     "build:anatomy": "node --max-old-space-size=8192 --import tsx scripts/build-anatomy.ts",
-    "slides:build": "node scripts/submission/build-slides.mjs",
-    "video:record": "node scripts/submission/record-video.mjs",
-    "video:assemble": "bash scripts/submission/assemble-video.sh"
+    "slides:build": "node scripts/submission/build-slides.mjs"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "^5.3.0",

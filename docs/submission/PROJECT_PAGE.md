@@ -26,21 +26,17 @@ On a Mars mission a message to the flight surgeon takes many minutes each way, E
 
 ## 3. Project Demonstration *
 
-One full https URL: the 7-slide deck or the ≤ 30-s video. GitHub is allowed; both links open without a login (the
-repository is public; they work once this branch is on `main`).
+One full https URL: the 7-slide deck. GitHub is allowed; the link opens without a login (the repository is public).
 
-- Slides (7 pages, PDF): https://github.com/FeyruzSultanli/argus-crew-health/blob/main/docs/submission/slides/ARGUS-slides.pdf
-- Video (29 s, no-camera cut): https://github.com/FeyruzSultanli/argus-crew-health/blob/main/docs/submission/video/ARGUS-video-nocamera.mp4
+Paste:
 
-**Paste one.** If someone on the team has watched the video at full size: paste the **video** link. Otherwise paste
-the **slides** link. A YouTube or Drive upload is optional, not required. If you record the real camera shot and
-re-assemble (`docs/submission/video/README.md`), the final cut is `ARGUS-video-draft.mp4`: link that file instead.
+https://github.com/FeyruzSultanli/argus-crew-health/blob/main/docs/submission/slides/ARGUS-slides.pdf
 
 ---
 
 ## 4. Project *
 
-One URL. Recommended — the repository (its README links the live demo, the slides and the video):
+One URL. Recommended — the repository (its README links the live demo and the slides):
 
 https://github.com/FeyruzSultanli/argus-crew-health
 
@@ -236,7 +232,11 @@ IBM Plex (OFL), icons Lucide (ISC).
 
 A multi-select list ("select all that apply"); the exact option labels are only visible in the form.
 
-<<TO BE FILLED IN BY THE TEAM AT SUBMISSION>>
+Paste:
+
+- Claude Code was used to write the code quickly and without errors.
+- It was used to create the texts in the project.
+- It was used for the presentation.
 
 ---
 

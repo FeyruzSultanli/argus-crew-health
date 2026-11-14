@@ -26,6 +26,9 @@ is labeled on every card. Real crew dose comes from dosimeters and real shelter 
 or demo label. The export uses the shape a crew health data platform can read, and the flight surgeon only sees what
 has arrived over the delayed link. The honesty table is in the app itself, on the Limits page.
 
-**7 — Decisions on board, when Earth is minutes away.** ARGUS shows that a crew can see who needs attention, why, and
-what to do, with hardware already on board. What it needs next is validation against reference devices and a clinical
-review. Scan the code to try it; the demo PIN is 2026.
+**7 — Decisions on board, when Earth is minutes away.** Most entries check readings against fixed thresholds. ARGUS asks a better question: is this unusual for
+this astronaut, in this environment, and can we trust the measurement? And it measures with hardware already on
+board. Do not claim it is clinically more accurate: the crew data is simulated, some thresholds are demo parameters,
+the camera pulse has not been compared with a reference device and the face scan is experimental. The claim is a
+better question and honest labels, not a better diagnosis. What it needs next is validation against reference
+devices and a clinical review. Scan the code to try it; the demo PIN is 2026.

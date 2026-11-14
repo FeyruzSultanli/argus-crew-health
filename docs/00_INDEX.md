@@ -15,7 +15,7 @@
 | 11 | [UI/UX specification](11_UI_UX_SPEC.md) | design system, every screen |
 | 12 | [Datasets & sources](12_DATASETS_AND_SOURCES.md) | what to download, licenses |
 | 14 | [QA & verification](14_QA_AND_VERIFICATION.md) | test plan, fact-check, demo rehearsal |
-| — | [submission/](submission/) | project page text, 30-s video, 7 slides, challenge coverage |
+| — | [submission/](submission/) | project page text, 7 slides, live demo script, challenge coverage |
 | — | [Project rules](PROJECT_RULES.md) | honesty, privacy and code rules |
 | — | [Decisions register](DECISIONS.md) | decisions and deviations from the specification, numbered |
 | — | `../seed/sources.json` | the single registry of every cited fact |

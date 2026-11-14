@@ -7,7 +7,7 @@
 | Unit | Vitest | `src/domain/**`, `src/measurement/**` pure parts, `scripts/check-sources.ts` | every PR; coverage ≥ 85 % domain |
 | Component | Testing Library | ui components, forms (validation), SignalCard order | every PR |
 | E2E | Playwright | demo script, offline, a11y (axe), keyboard flows | before the feature freeze; final run on the production URL |
-| Manual | by hand | camera flows on 2+ laptops, 3D performance, copy review, video rehearsal | before the feature freeze |
+| Manual | by hand | camera flows on 2+ laptops, 3D performance, copy review, demo rehearsal | before the feature freeze |
 
 ## 2. Domain test matrix (minimum)
 
@@ -39,7 +39,7 @@
 - [ ] No diagnosis wording; no drug doses; protocols tagged source/demo wording.
 - [ ] Camera: privacy line visible; no frames in network log; no frames in IndexedDB.
 - [ ] Experimental features labeled (face index, respiration).
-- [ ] Replay is badged REPLAY (and "synthetic" when it is not a recorded event); nothing in the app, video or slides
+- [ ] Replay is badged REPLAY (and "synthetic" when it is not a recorded event); nothing in the app or slides
       calls it real or live. The Mars-transit delay is shown as "modeled".
 - [ ] Limits page lists real vs simulated vs modeled vs experimental; rPPG validation numbers shown honestly.
 - [ ] No NASA logos/insignia.
