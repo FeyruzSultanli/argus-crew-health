@@ -1,7 +1,7 @@
 # 12 — Datasets, assets and sources
 
 Space Apps requires NASA data or resources for Global Award eligibility [SRC_SPACEAPPS_GUIDE]. This table is
-also the "NASA Data" and "Space Agency Partner & Other Data" sections of the project page (`docs/submission/PROJECT_PAGE.md`).
+also the "NASA Data" and "Space Agency Partner & Other Data" sections of the Space Apps project page.
 
 ## 1. Data we use
 

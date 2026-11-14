@@ -113,7 +113,7 @@ deploys `dist/` to https://feyruzsultanli.github.io/argus-crew-health/.
 
 ## Data, sources and credits
 
-- NASA and partner data used, and how: `docs/12_DATASETS_AND_SOURCES.md` and `docs/submission/PROJECT_PAGE.md`.
+- NASA and partner data used, and how: `docs/12_DATASETS_AND_SOURCES.md`.
 - Every cited fact with its status: `seed/sources.json`.
 - Third-party assets and licenses: `CREDITS.md` (HRA 3D Reference Organs — HuBMAP/NIH, CC BY 4.0; MediaPipe —
   Apache-2.0; IBM Plex — OFL; Lucide — ISC; NASA OSDR and NOAA SWPC public data).
